@@ -6,94 +6,97 @@
 <title>Nate Palmer Selected Work</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap">
 <style>
-/* Layout: a deep estuary-green hero with river contour lines and a pebble-framed portrait, then a pale lichen ground where clinic work sits as cards, publications as a ledger and seminars along a river timeline. */
+/* Layout: SOAS palette. A dark-blue hero with the portrait, then clinic work as cards (lead card larger), publications as a ledger, seminars along a timeline. One typeface (Mulish, a web stand-in for SOAS's Museo Sans); hierarchy by size, weight and colour only. */
 :root {
-  --estuary: #0e3a37;        /* hero ground, both themes */
-  --estuary-ink: #e9f1ec;    /* text on hero */
-  --estuary-soft: #9fc3b6;   /* secondary text and contours on hero */
-  --ground: #eef2ec;         /* lichen */
+  --hero: #1b1f54;          /* SOAS Dark Blue */
+  --hero-ink: #ffffff;
+  --hero-soft: #c9cbe6;
+  --ground: #f5f7f8;
   --surface: #ffffff;
-  --ink: #15211f;
-  --muted: #5b6b66;
-  --rule: #d3ddd6;
-  --river: #17707a;          /* kingfisher teal */
-  --river-soft: #dcebea;
-  --marigold: #c98a1b;
-  --marigold-soft: #f6ead2;
-  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --body: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
+  --ink: #1b1f54;
+  --text: #2c2f45;
+  --muted: #5f6377;
+  --rule: #dfe3ea;
+  --sea: #00869d;           /* SOAS Sea Blue */
+  --sea-text: #006f82;
+  --sea-soft: #e0f1f4;
+  --gold: #fbba00;          /* SOAS Gold */
+  --gold-soft: #fff1c7;
+  --coral: #dcadb6;         /* SOAS Coral */
+  --coral-soft: #f7e8eb;
+  --font: "Mulish", "Museo Sans", Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --estuary: #0a2a28;
-    --estuary-ink: #e6efe9;
-    --estuary-soft: #8db5a7;
-    --ground: #0f1716;
-    --surface: #16211f;
-    --ink: #e3ebe7;
-    --muted: #9cb0a9;
-    --rule: #263431;
-    --river: #6fc0c5;
-    --river-soft: #1a3133;
-    --marigold: #e6b45a;
-    --marigold-soft: #33290f;
+    --hero: #14173f;
+    --hero-ink: #ffffff;
+    --hero-soft: #b9bcdf;
+    --ground: #10122a;
+    --surface: #181b3a;
+    --ink: #f2f3fb;
+    --text: #d9dbe8;
+    --muted: #a3a6bf;
+    --rule: #2a2e52;
+    --sea: #3fb6ca;
+    --sea-text: #6fcad9;
+    --sea-soft: #15324a;
+    --gold: #fbba00;
+    --gold-soft: #3b3112;
+    --coral: #e3b7c0;
+    --coral-soft: #3a2630;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --estuary: #0a2a28;
-  --estuary-ink: #e6efe9;
-  --estuary-soft: #8db5a7;
-  --ground: #0f1716;
-  --surface: #16211f;
-  --ink: #e3ebe7;
-  --muted: #9cb0a9;
-  --rule: #263431;
-  --river: #6fc0c5;
-  --river-soft: #1a3133;
-  --marigold: #e6b45a;
-  --marigold-soft: #33290f;
+  --hero: #14173f;
+  --hero-ink: #ffffff;
+  --hero-soft: #b9bcdf;
+  --ground: #10122a;
+  --surface: #181b3a;
+  --ink: #f2f3fb;
+  --text: #d9dbe8;
+  --muted: #a3a6bf;
+  --rule: #2a2e52;
+  --sea: #3fb6ca;
+  --sea-text: #6fcad9;
+  --sea-soft: #15324a;
+  --gold: #fbba00;
+  --gold-soft: #3b3112;
+  --coral: #e3b7c0;
+  --coral-soft: #3a2630;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; }
-a { color: var(--river); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+body { margin: 0; background: var(--ground); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; font-weight: 400; }
+h1, h2, h3 { font-family: var(--font); color: var(--ink); margin: 0; text-wrap: balance; }
+a { color: var(--sea-text); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--marigold); outline-offset: 3px; border-radius: 4px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 
 /* hero */
-.hero { position: relative; overflow: hidden; background: var(--estuary); color: var(--estuary-ink); }
-.hero svg.contours { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.hero svg.contours path { fill: none; stroke: var(--estuary-soft); stroke-width: 1.2; opacity: 0.28; }
+.hero { background: var(--hero); color: var(--hero-ink); border-bottom: 6px solid var(--sea); }
 .hero-in {
-  position: relative; max-width: 1040px; margin: 0 auto;
+  max-width: 1040px; margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 64px 72px;
-  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 48px; align-items: center;
+  padding-block: 64px 64px;
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 48px; align-items: center;
 }
-.hero .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--estuary-soft); font-weight: 700; }
-.hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.8rem, 6vw, 4.6rem); line-height: 1; margin: 14px 0 18px; letter-spacing: -0.01em; }
-.hero .statement { font-family: var(--display); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.3; margin: 0 0 18px; max-width: 30ch; text-wrap: balance; }
-.hero .lede { margin: 0 0 26px; max-width: 58ch; color: var(--estuary-soft); }
+.hero .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 800; }
+.hero h1 { color: var(--hero-ink); font-weight: 800; font-size: clamp(2.6rem, 5.5vw, 4.2rem); line-height: 1.02; margin: 14px 0 16px; letter-spacing: -0.015em; }
+.hero .statement { font-size: clamp(1.2rem, 2.2vw, 1.5rem); font-weight: 500; line-height: 1.35; margin: 0 0 16px; max-width: 34ch; }
+.hero .lede { margin: 0 0 26px; max-width: 58ch; color: var(--hero-soft); }
 .contact { display: flex; flex-wrap: wrap; gap: 10px; }
 .contact a, .contact span {
-  font-size: 0.9rem; color: var(--estuary-ink); text-decoration: none;
-  border: 1px solid color-mix(in srgb, var(--estuary-soft) 55%, transparent); border-radius: 999px; padding: 6px 14px;
+  font-size: 0.9rem; font-weight: 700; color: var(--hero-ink); text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--hero-soft) 50%, transparent); border-radius: 999px; padding: 6px 14px;
 }
 .contact span { user-select: all; }
-.contact a:hover { background: color-mix(in srgb, var(--estuary-soft) 18%, transparent); }
-.portrait { justify-self: center; width: min(320px, 100%); aspect-ratio: 1; position: relative; }
-.portrait::before {
-  content: ""; position: absolute; inset: -14px; border: 1.5px solid var(--marigold);
-  border-radius: 58% 42% 52% 48% / 46% 56% 44% 54%; transform: rotate(-6deg);
-}
-.portrait img {
-  width: 100%; height: 100%; object-fit: cover; display: block; position: relative;
-  border-radius: 52% 48% 46% 54% / 54% 46% 54% 46%;
-}
+.contact a:hover { background: color-mix(in srgb, var(--hero-soft) 16%, transparent); }
+.portrait { justify-self: end; width: min(300px, 100%); }
+.portrait img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 14px; }
 
 /* page */
 .wrap {
@@ -101,91 +104,67 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--marigold); outl
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 44px 80px;
-  display: grid; gap: 56px;
+  display: grid; gap: 60px;
 }
 .filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
-.filters .label { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.filters .label { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 800; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { font: inherit; font-size: 0.9rem; cursor: pointer; background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 15px; }
-.chip:hover { border-color: var(--river); }
-.chip[aria-pressed="true"] { background: var(--river); border-color: var(--river); color: var(--surface); }
+.chip { font: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 15px; }
+.chip:hover { border-color: var(--sea); }
+.chip[aria-pressed="true"] { background: var(--sea); border-color: var(--sea); color: #ffffff; }
 .count { font-size: 0.88rem; color: var(--muted); }
 
-section.group > h2 {
-  font-family: var(--display); font-weight: 500; font-size: clamp(1.7rem, 3vw, 2.2rem); margin: 0 0 22px; line-height: 1.15;
-  padding-bottom: 14px; position: relative;
-}
-section.group > h2::after {
-  content: ""; position: absolute; left: 0; bottom: 0; width: 120px; height: 8px; background: var(--river);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 4 Q10 0 20 4 T40 4' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x;
-          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 4 Q10 0 20 4 T40 4' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x;
-}
-.intro { margin: -8px 0 18px; max-width: 64ch; color: var(--muted); }
+section.group > h2 { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; margin-bottom: 22px; }
+.intro { margin: -10px 0 18px; max-width: 64ch; color: var(--muted); }
 
-/* clinic cards */
+/* shared meta */
+.when { font-size: 0.85rem; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 0.87rem; color: var(--muted); align-items: center; }
+.meta .role { background: var(--gold-soft); color: var(--ink); border-radius: 999px; padding: 1px 10px; font-weight: 800; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.92rem; font-weight: 700; }
+.cite { font-style: italic; }
+
+/* clinic and policy cards */
 #g-clinic { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 #g-clinic > h2 { grid-column: 1 / -1; margin-bottom: 4px; }
 #g-clinic .item { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 8px; }
-#g-clinic .item:last-of-type { grid-column: 1 / -1; }
-#g-clinic .item:first-of-type { grid-column: 1 / -1; background: var(--river-soft); border-color: transparent; }
-#g-clinic .item .when { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-#g-clinic .item h3 { font-family: var(--display); font-weight: 500; font-size: 1.4rem; line-height: 1.2; margin: 0; text-wrap: balance; }
-#g-clinic .item:first-of-type h3 { font-size: 1.75rem; }
+#g-clinic .item.lead { grid-column: 1 / -1; padding: 28px 28px 24px; }
+#g-clinic .item.wide { grid-column: 1 / -1; }
+#g-clinic .item h3 { font-weight: 800; font-size: 1.25rem; line-height: 1.25; }
+#g-clinic .item.lead h3 { font-size: 1.75rem; }
 #g-clinic .item p { margin: 0; max-width: 70ch; }
 #g-clinic .links { margin-top: auto; padding-top: 6px; }
 
-/* shared meta */
-.meta { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 0.87rem; color: var(--muted); align-items: center; }
-.meta .role { background: var(--marigold-soft); color: var(--ink); border-radius: 999px; padding: 1px 10px; font-weight: 700; }
-.meta .elf-tag { color: var(--river); font-weight: 700; }
-.links { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.92rem; font-weight: 700; }
-.cite { font-family: var(--display); font-size: 1.05rem; }
-
 /* publications ledger */
 #g-pubs .item, #g-comms .item { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 4px 24px; padding: 18px 0; border-top: 1px solid var(--rule); }
-#g-pubs .item .when, #g-comms .item .when { color: var(--muted); font-size: 0.9rem; padding-top: 4px; font-variant-numeric: tabular-nums; }
-#g-pubs .item h3, #g-comms .item h3 { font-family: var(--display); font-weight: 500; font-size: 1.3rem; line-height: 1.25; margin: 0 0 4px; text-wrap: balance; }
+#g-pubs .item .when, #g-comms .item .when { padding-top: 4px; }
+#g-pubs .item h3, #g-comms .item h3 { font-weight: 800; font-size: 1.18rem; line-height: 1.3; margin-bottom: 4px; }
 #g-pubs .item p, #g-comms .item p { margin: 6px 0 0; max-width: 66ch; }
 #g-pubs .links, #g-comms .links { margin-top: 8px; }
 
 /* seminar timeline */
-#g-events { position: relative; }
-.yr-h { margin: 26px 0 8px; font-family: var(--display); font-style: italic; font-weight: 400; font-size: 1.25rem; color: var(--river); }
-.item.event { position: relative; display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 2px 24px; padding: 10px 0 10px 22px; border-left: 2px solid var(--river-soft); margin-left: 6px; }
-.item.event::before { content: ""; position: absolute; left: -7px; top: 17px; width: 12px; height: 12px; border-radius: 50%; background: var(--ground); border: 2px solid var(--river); }
-.item.event:has(.role)::before { background: var(--marigold); border-color: var(--marigold); }
-.item.event .when { color: var(--muted); font-size: 0.88rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
-.item.event h3 { font-family: var(--display); font-weight: 500; font-size: 1.1rem; line-height: 1.3; margin: 0 0 2px; }
+.yr-h { margin: 26px 0 8px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sea-text); }
+.item.event { position: relative; display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 2px 24px; padding: 10px 0 10px 22px; border-left: 2px solid var(--coral-soft); margin-left: 6px; }
+.item.event::before { content: ""; position: absolute; left: -7px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: var(--coral); }
+.item.event:has(.role)::before { background: var(--gold); }
+.item.event .when { padding-top: 2px; }
+.item.event h3 { font-weight: 700; font-size: 1.05rem; line-height: 1.35; margin-bottom: 2px; }
 .item.event p { margin: 4px 0 0; font-size: 0.93rem; max-width: 64ch; }
 
 .empty { color: var(--muted); }
 footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 18px; }
 
 @media (max-width: 760px) {
-  .hero-in { grid-template-columns: 1fr; gap: 36px; padding-block: 44px 56px; }
-  .portrait { order: -1; width: 190px; justify-self: start; margin: 14px 0 0 14px; }
+  .hero-in { grid-template-columns: 1fr; gap: 28px; padding-block: 40px 48px; }
+  .portrait { order: -1; width: 170px; justify-self: start; }
   #g-clinic { grid-template-columns: 1fr; }
   #g-pubs .item, #g-comms .item, .item.event { grid-template-columns: 1fr; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero svg.contours path { animation: drift 22s ease-in-out infinite alternate; }
-  .hero svg.contours path:nth-child(even) { animation-duration: 28s; }
-  @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-30px); } }
 }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <svg class="contours" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M-40 80 C 180 20, 320 150, 540 100 S 900 20, 1240 90"/>
-    <path d="M-40 130 C 200 70, 330 200, 560 150 S 920 70, 1240 140"/>
-    <path d="M-40 185 C 220 120, 350 255, 580 205 S 940 120, 1240 195"/>
-    <path d="M-40 245 C 240 180, 370 315, 600 265 S 960 180, 1240 255"/>
-    <path d="M-40 310 C 260 245, 390 380, 620 330 S 980 245, 1240 320"/>
-    <path d="M-40 380 C 280 315, 410 450, 640 400 S 1000 315, 1240 390"/>
-    <path d="M-40 455 C 300 390, 430 525, 660 475 S 1020 390, 1240 465"/>
-  </svg>
   <div class="hero-in">
     <div>
       <div class="eyebrow">Environmental law · Rights of Nature · Access to justice</div>
@@ -193,8 +172,7 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
       <p class="statement">Legal research and advocacy with communities, rivers and the people who defend them.</p>
       <p class="lede">Lecturer in International Environmental Law at SOAS University of London and co-coordinator of the SOAS Environmental Justice Clinic, working on Rights of Nature, water governance and access to environmental justice.</p>
       <div class="contact">
-        <span>npalmer1119@gmail.com</span>
-        <span>07832 175713</span>
+        <span>np51@soas.ac.uk</span>
         <a href="https://www.linkedin.com/in/palmernate/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://soas-repository.worktribe.com/person/300754/nate-palmer" target="_blank" rel="noopener">SOAS Research Online</a>
       </div>
@@ -204,7 +182,6 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
 </header>
 
 <div class="wrap">
-
   <div class="filters" role="group" aria-labelledby="filter-label">
     <div class="label" id="filter-label">Filter by theme</div>
     <div class="chips" id="chips">
@@ -213,7 +190,6 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
       <button class="chip" type="button" data-f="water" aria-pressed="false">Rivers and water</button>
       <button class="chip" type="button" data-f="local" aria-pressed="false">Local government</button>
       <button class="chip" type="button" data-f="intl" aria-pressed="false">International law</button>
-      <button class="chip" type="button" data-f="elf" aria-pressed="false">With ELF</button>
     </div>
     <div class="count" id="count" aria-live="polite"></div>
   </div>
@@ -221,59 +197,79 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
   <section class="group" id="g-clinic">
     <h2>Clinic projects and policy reports</h2>
 
-    <article class="item" id="thames" data-tags="ron water local elf">
+    <article class="item lead" data-tags="ron water local">
       <div class="when">2025–26</div>
-      <div>
-        <h3>A Charter for the River Thames</h3>
-        <div class="meta"><span class="role">Co-supervisor</span><span>LSE Sustainability Law and Policy Clinic, intercollegiate</span><span class="elf-tag">With ELF</span></div>
-        <p>London's first intercollegiate environmental law clinic, with LSE, King's, UCL, SOAS and Birkbeck, tested legal routes to a Thames Charter that treats the river as a stakeholder in decisions affecting it. I co-supervised the strand on bringing the Thames into decision-making procedures. The other strands looked at a joint borough arrangement under the Local Government Act 1972 and at byelaw powers. Three reports, April 2026.</p>
-        <div class="links"><a href="https://www.lse.ac.uk/global-school-of-sustainability/themes/mobilising-political-legal-governance-systems/clinic/intercollegiate/a-charter-for-the-river-thames" target="_blank" rel="noopener">Project and reports</a></div>
-      </div>
+      <h3>A Charter for the River Thames</h3>
+      <div class="meta"><span class="role">Co-supervisor</span><span>LSE Sustainability Law and Policy Clinic, intercollegiate, with the Environmental Law Foundation</span></div>
+      <p>London's first intercollegiate environmental law clinic, with LSE, King's, UCL, SOAS and Birkbeck, tested legal routes to a Thames Charter that treats the river as a stakeholder in decisions affecting it. I co-supervised the strand on bringing the Thames into decision-making procedures. The other strands looked at a joint borough arrangement under the Local Government Act 1972 and at byelaw powers. Three reports, April 2026.</p>
+      <div class="links"><a href="https://www.lse.ac.uk/global-school-of-sustainability/themes/mobilising-political-legal-governance-systems/clinic/intercollegiate/a-charter-for-the-river-thames" target="_blank" rel="noopener">Project and reports</a></div>
     </article>
 
-    <article class="item" id="ron-report" data-tags="ron intl">
+    <article class="item" data-tags="ron intl">
       <div class="when">Oct 2024</div>
-      <div>
-        <h3>Representing Rights of Nature: A Survey of Representative Forms</h3>
-        <div class="meta"><span class="role">Coordinator</span><span>SOAS Clinic with Lawyers for Nature</span></div>
-        <p>Maps and analyses the models through which Nature is represented in law worldwide, for community organisers, lawyers, NGOs and policymakers. Published as more than 500 Rights of Nature initiatives had been recorded globally.</p>
-        <div class="links">
-          <a href="https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf" target="_blank" rel="noopener">Report (PDF)</a>
-          <a href="https://soas.ac.uk/about/news/soas-environmental-law-clinic-partners-lawyers-nature-rights-nature-representative-model" target="_blank" rel="noopener">SOAS announcement</a>
-        </div>
+      <h3>Representing Rights of Nature: A Survey of Representative Forms</h3>
+      <div class="meta"><span class="role">Coordinator</span><span>SOAS Clinic with Lawyers for Nature</span></div>
+      <p>Maps and analyses the models through which Nature is represented in law worldwide, for community organisers, lawyers, NGOs and policymakers. Published as more than 500 Rights of Nature initiatives had been recorded globally.</p>
+      <div class="links">
+        <a href="https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf" target="_blank" rel="noopener">Report (PDF)</a>
+        <a href="https://soas.ac.uk/about/news/soas-environmental-law-clinic-partners-lawyers-nature-rights-nature-representative-model" target="_blank" rel="noopener">SOAS announcement</a>
       </div>
     </article>
 
-    <article class="item" id="ouse" data-tags="ron water local elf">
+    <article class="item" data-tags="ron water local">
       <div class="when">2024</div>
-      <div>
-        <h3>Rights of Nature on the River Ouse</h3>
-        <div class="meta"><span>SOAS Clinic with ELF and Love Our Ouse</span><span class="elf-tag">With ELF</span></div>
-        <p>Students reviewed national legislation and biodiversity records to map UK-protected species along the River Ouse in Sussex. The work supports a river charter intended for endorsement by Lewes District Council. Two reports across two years.</p>
-        <div class="links"><a href="https://www.soas.ac.uk/about/news/soas-students-champion-rights-nature-pro-bono-project-river-ouse" target="_blank" rel="noopener">Project and reports</a></div>
+      <h3>Rights of Nature on the River Ouse</h3>
+      <div class="meta"><span>SOAS Clinic with the Environmental Law Foundation and Love Our Ouse</span></div>
+      <p>Students reviewed national legislation and biodiversity records to map UK-protected species along the River Ouse in Sussex. The work supports a river charter intended for endorsement by Lewes District Council. Two reports across two years.</p>
+      <div class="links"><a href="https://www.soas.ac.uk/about/news/soas-students-champion-rights-nature-pro-bono-project-river-ouse" target="_blank" rel="noopener">Project and reports</a></div>
+    </article>
+
+    <article class="item" data-tags="ron intl">
+      <div class="when">Since 2024</div>
+      <h3>ILA Committee on Rights of Nature</h3>
+      <div class="meta"><span class="role">Contributor</span><span>International Law Association</span></div>
+      <p>An ILA committee developing common principles, guidelines and proposals on Rights of Nature, including its interfaces with sustainable development, Indigenous rights and human rights.</p>
+      <div class="links"><a href="https://www.ila-hq.org/en/committees/rights-of-nature" target="_blank" rel="noopener">Committee and proposal</a></div>
+    </article>
+
+    <article class="item" data-tags="ron water intl">
+      <div class="when">2025–29</div>
+      <h3>IUCN WCEL Rights of Nature Specialist Group</h3>
+      <div class="meta"><span>IUCN World Commission on Environmental Law</span></div>
+      <p>Legal expertise on constitutional, legislative and judicial approaches to Rights of Nature, with projects on operationalising Rights of Nature, rivers and wetlands, global commons, and Indigenous and customary practice.</p>
+      <div class="links">
+        <a href="https://iucn.org/our-union/commissions/group/iucn-wcel-rights-nature-specialist-group" target="_blank" rel="noopener">Specialist Group</a>
+        <a href="https://portals.iucn.org/union/sites/union/files/doc/WCEL_Rights_of_Nature_SG_TOR_0.pdf" target="_blank" rel="noopener">Terms of Reference (PDF)</a>
       </div>
     </article>
 
-    <article class="item" data-tags="local">
+    <article class="item wide" data-tags="local">
       <div class="when">Clinic</div>
-      <div>
-        <h3>Further Clinic research</h3>
-        <div class="meta"><span>Wildlife Trust · ClientEarth</span></div>
-        <p>A report for the Wildlife Trust on the legal framework for beaver reintroduction in England, and research for ClientEarth tracking fossil fuel companies' environmental commitments.</p>
-        <div class="links"><a href="https://www.ledc.info/degree-programmes/clinic-environmental-law-policy-clinic" target="_blank" rel="noopener">All Clinic projects</a></div>
-      </div>
+      <h3>Further Clinic research</h3>
+      <div class="meta"><span>Wildlife Trust · ClientEarth</span></div>
+      <p>A report for the Wildlife Trust on the legal framework for beaver reintroduction in England, and research for ClientEarth tracking fossil fuel companies' environmental commitments.</p>
+      <div class="links"><a href="https://www.ledc.info/degree-programmes/clinic-environmental-law-policy-clinic" target="_blank" rel="noopener">All Clinic projects</a></div>
     </article>
   </section>
 
   <section class="group" id="g-pubs">
     <h2>Research and publications</h2>
 
+    <article class="item" data-tags="ron water">
+      <div class="when">2026</div>
+      <div>
+        <h3>Harmony with Nature: Evolving Dimensions of Water Governance in India</h3>
+        <div class="meta"><span class="role">PhD thesis</span><span>SOAS University of London</span></div>
+        <p>Socio-legal research in Delhi and Meghalaya, including around ten weeks of fieldwork with Khasi communities in Shillong. Supervised by Professor Philippe Cullet (SOAS) and Dr Izabela Delabre (Birkbeck). Funded by a Bloomsbury PhD Studentship.</p>
+      </div>
+    </article>
+
     <article class="item" data-tags="ron intl">
       <div class="when">2026</div>
       <div>
         <h3>Biocultural Rights in the Biodiversity Regime</h3>
         <div class="meta"><span class="role">Author</span><span>Journal article</span></div>
-        <p class="cite">Nate Palmer, ‘Biocultural Rights in the Biodiversity Regime: Relationality and the Limits of Instrumentalism’ (2026) 22(1) <i>Law, Environment and Development Journal</i> 1</p>
+        <p class="cite">Nate Palmer, ‘Biocultural Rights in the Biodiversity Regime: Relationality and the Limits of Instrumentalism’ (2026) 22(1) Law, Environment and Development Journal 1</p>
         <div class="links"><a href="https://doi.org/10.25501/soas.00874970" target="_blank" rel="noopener">doi.org/10.25501/soas.00874970</a></div>
       </div>
     </article>
