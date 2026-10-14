@@ -18,15 +18,15 @@
   --grey: #575756;
   --gold: #fbba00;
   --white: #ffffff;
-  --rule: #e4e2df;
-  --rule-strong: #cfd8de;
+  --rule: #dfcab1;
+  --rule-strong: #d9c4a9;
   --hover: #f7f9fa;
   --font: "Mulish", Arial, Helvetica, sans-serif;
   --measure: 68ch;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--white); color: var(--grey); font-family: var(--font); font-size: 17.5px; line-height: 1.7; font-weight: 400; }
+body { margin: 0; background: var(--stone); color: var(--grey); font-family: var(--font); font-size: 17.5px; line-height: 1.7; font-weight: 400; }
 h1, h2, h3, h4 { font-family: var(--font); color: var(--dark-blue); margin: 0; text-wrap: balance; overflow-wrap: anywhere; }
 p { margin: 0; }
 a { color: var(--dark-blue); text-decoration: underline; text-decoration-color: var(--sea); text-decoration-thickness: 1.5px; text-underline-offset: 4px; font-weight: 700; overflow-wrap: anywhere; }
@@ -47,7 +47,7 @@ a:hover { text-decoration-color: var(--dark-blue); text-decoration-thickness: 2p
 .contact a { color: var(--white); text-decoration-color: var(--gold); }
 .contact a:hover { text-decoration-color: var(--white); }
 .contact .label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #aeb1cf; line-height: 1.4; }
-.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 12%; border-radius: 50%; }
 
 /* sections */
 main section { padding-block: 88px 0; }
@@ -67,7 +67,7 @@ main section:last-of-type { padding-bottom: 96px; }
 .row .cite { font-style: italic; }
 .row .links { margin-top: 12px; }
 
-.badge { display: inline-block; background: var(--stone); color: var(--dark-blue); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.5; padding: 2px 10px; border-radius: 3px; margin-right: 10px; vertical-align: 1px; }
+.badge { display: inline-block; background: #e8d3b8; color: var(--dark-blue); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.5; padding: 2px 10px; border-radius: 3px; margin-right: 10px; vertical-align: 1px; }
 .links { display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 0.95rem; }
 
 /* cards */
@@ -83,7 +83,7 @@ main section:last-of-type { padding-bottom: 96px; }
 .card .meta { font-size: 0.92rem; }
 .card p { max-width: var(--measure); }
 .card .links { margin-top: auto; padding-top: 10px; }
-.card:hover { border-color: #b8c6cf; box-shadow: 0 1px 2px rgba(27, 31, 84, 0.06); }
+.card:hover { border-color: #c7ad8c; box-shadow: 0 1px 2px rgba(27, 31, 84, 0.06); }
 
 /* seminars */
 .seminars { margin-left: 232px; }
