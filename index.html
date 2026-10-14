@@ -6,166 +6,204 @@
 <title>Nate Palmer Selected Work</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-/* Layout: a single reading column, like a river catchment map key. Header, a band for work with ELF, filters, then a ledger of projects grouped by kind. */
+/* Layout: a deep estuary-green hero with river contour lines and a pebble-framed portrait, then a pale lichen ground where clinic work sits as cards, publications as a ledger and seminars along a river timeline. */
 :root {
-  --ground: #f3f5f3;
+  --estuary: #0e3a37;        /* hero ground, both themes */
+  --estuary-ink: #e9f1ec;    /* text on hero */
+  --estuary-soft: #9fc3b6;   /* secondary text and contours on hero */
+  --ground: #eef2ec;         /* lichen */
   --surface: #ffffff;
-  --ink: #18242a;
-  --muted: #56656b;
-  --rule: #d5dcdb;
-  --river: #1f5c6e;
-  --river-soft: #e3eef0;
-  --moss: #4b6a3a;
-  --moss-soft: #e8efe2;
+  --ink: #15211f;
+  --muted: #5b6b66;
+  --rule: #d3ddd6;
+  --river: #17707a;          /* kingfisher teal */
+  --river-soft: #dcebea;
+  --marigold: #c98a1b;
+  --marigold-soft: #f6ead2;
   --display: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
-  --step-0: 0.95rem;
-  --step-1: 1.15rem;
-  --step-2: 1.5rem;
-  --step-3: 2.4rem;
+  --body: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #10181b;
-    --surface: #172227;
-    --ink: #e4ebec;
-    --muted: #9aaaae;
-    --rule: #2b3a40;
-    --river: #7fbfcf;
-    --river-soft: #1b3139;
-    --moss: #a5c58e;
-    --moss-soft: #1f2d1d;
+    --estuary: #0a2a28;
+    --estuary-ink: #e6efe9;
+    --estuary-soft: #8db5a7;
+    --ground: #0f1716;
+    --surface: #16211f;
+    --ink: #e3ebe7;
+    --muted: #9cb0a9;
+    --rule: #263431;
+    --river: #6fc0c5;
+    --river-soft: #1a3133;
+    --marigold: #e6b45a;
+    --marigold-soft: #33290f;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --ground: #10181b;
-  --surface: #172227;
-  --ink: #e4ebec;
-  --muted: #9aaaae;
-  --rule: #2b3a40;
-  --river: #7fbfcf;
-  --river-soft: #1b3139;
-  --moss: #a5c58e;
-  --moss-soft: #1f2d1d;
+  --estuary: #0a2a28;
+  --estuary-ink: #e6efe9;
+  --estuary-soft: #8db5a7;
+  --ground: #0f1716;
+  --surface: #16211f;
+  --ink: #e3ebe7;
+  --muted: #9cb0a9;
+  --rule: #263431;
+  --river: #6fc0c5;
+  --river-soft: #1a3133;
+  --marigold: #e6b45a;
+  --marigold-soft: #33290f;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body {
-  background: var(--ground);
-  color: var(--ink);
-  font-family: var(--body);
-  font-size: 15px;
-  line-height: 1.55;
-}
-.wrap {
-  max-width: 880px;
-  margin: 0 auto;
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+a { color: var(--river); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--marigold); outline-offset: 3px; border-radius: 4px; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; background: var(--estuary); color: var(--estuary-ink); }
+.hero svg.contours { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero svg.contours path { fill: none; stroke: var(--estuary-soft); stroke-width: 1.2; opacity: 0.28; }
+.hero-in {
+  position: relative; max-width: 1040px; margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 48px 72px;
-  display: grid;
-  gap: 44px;
+  padding-block: 64px 72px;
+  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 48px; align-items: center;
 }
-a { color: var(--river); text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--river); outline-offset: 2px; border-radius: 3px; }
-
-header { display: grid; gap: 14px; }
-.eyebrow {
-  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--muted); font-weight: 600;
+.hero .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--estuary-soft); font-weight: 700; }
+.hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.8rem, 6vw, 4.6rem); line-height: 1; margin: 14px 0 18px; letter-spacing: -0.01em; }
+.hero .statement { font-family: var(--display); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.3; margin: 0 0 18px; max-width: 30ch; text-wrap: balance; }
+.hero .lede { margin: 0 0 26px; max-width: 58ch; color: var(--estuary-soft); }
+.contact { display: flex; flex-wrap: wrap; gap: 10px; }
+.contact a, .contact span {
+  font-size: 0.9rem; color: var(--estuary-ink); text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--estuary-soft) 55%, transparent); border-radius: 999px; padding: 6px 14px;
 }
-h1 {
-  font-family: var(--display); font-weight: 500; font-size: var(--step-3);
-  line-height: 1.1; margin: 0; text-wrap: balance;
-}
-.lede { font-family: var(--display); font-size: var(--step-1); max-width: 62ch; margin: 0; color: var(--ink); }
-.contact { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.9rem; color: var(--muted); }
 .contact span { user-select: all; }
-
-/* ELF band */
-.elf {
-  background: var(--moss-soft);
-  border-left: 3px solid var(--moss);
-  padding: 22px 22px 20px;
-  display: grid; gap: 14px;
+.contact a:hover { background: color-mix(in srgb, var(--estuary-soft) 18%, transparent); }
+.portrait { justify-self: center; width: min(320px, 100%); aspect-ratio: 1; position: relative; }
+.portrait::before {
+  content: ""; position: absolute; inset: -14px; border: 1.5px solid var(--marigold);
+  border-radius: 58% 42% 52% 48% / 46% 56% 44% 54%; transform: rotate(-6deg);
 }
-.elf h2 { margin: 0; font-family: var(--display); font-weight: 500; font-size: var(--step-2); }
-.elf p { margin: 0; max-width: 64ch; }
-.elf ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.elf li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 12px; align-items: baseline; }
-.elf li .yr { font-variant-numeric: tabular-nums; color: var(--moss); font-weight: 600; font-size: 0.9rem; }
-.elf li a { font-weight: 500; }
+.portrait img {
+  width: 100%; height: 100%; object-fit: cover; display: block; position: relative;
+  border-radius: 52% 48% 46% 54% / 54% 46% 54% 46%;
+}
 
-/* filters */
-.filters { display: grid; gap: 10px; }
-.filters .label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+/* page */
+.wrap {
+  max-width: 1040px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 44px 80px;
+  display: grid; gap: 56px;
+}
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.filters .label { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  font: inherit; font-size: 0.88rem; cursor: pointer;
-  background: var(--surface); color: var(--ink);
-  border: 1px solid var(--rule); border-radius: 999px; padding: 5px 13px;
-}
-.chip[aria-pressed="true"] { background: var(--river); border-color: var(--river); color: var(--ground); }
+.chip { font: inherit; font-size: 0.9rem; cursor: pointer; background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 15px; }
+.chip:hover { border-color: var(--river); }
+.chip[aria-pressed="true"] { background: var(--river); border-color: var(--river); color: var(--surface); }
 .count { font-size: 0.88rem; color: var(--muted); }
 
-/* ledger */
-section.group { display: grid; gap: 4px; }
 section.group > h2 {
-  font-family: var(--display); font-weight: 500; font-size: var(--step-2);
-  margin: 0 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+  font-family: var(--display); font-weight: 500; font-size: clamp(1.7rem, 3vw, 2.2rem); margin: 0 0 22px; line-height: 1.15;
+  padding-bottom: 14px; position: relative;
 }
-.item {
-  display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 4px 20px;
-  padding: 16px 0; border-bottom: 1px solid var(--rule);
+section.group > h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 120px; height: 8px; background: var(--river);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 4 Q10 0 20 4 T40 4' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 4 Q10 0 20 4 T40 4' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x;
 }
-.item .when { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.9rem; padding-top: 3px; }
-.item h3 { margin: 0; font-family: var(--display); font-weight: 500; font-size: var(--step-1); line-height: 1.3; text-wrap: balance; }
-.item .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.85rem; color: var(--muted); margin: 4px 0 6px; }
-.item .meta .role { color: var(--river); font-weight: 600; }
-.item .meta .elf-tag { color: var(--moss); font-weight: 600; }
-.item p { margin: 0; max-width: 66ch; }
-.item .cite { font-family: var(--display); font-size: 1rem; }
-.links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; font-size: 0.9rem; }
-.empty { color: var(--muted); padding: 16px 0; }
-.intro { margin: 0 0 6px; max-width: 64ch; color: var(--muted); }
-.yr-h {
-  margin: 18px 0 0; font-family: var(--body); font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--river);
-}
-.item.event { padding: 10px 0; }
-.item.event h3 { font-size: 1.05rem; }
-.item.event .meta { margin-bottom: 0; }
-.item.event p { margin-top: 4px; font-size: 0.92rem; }
+.intro { margin: -8px 0 18px; max-width: 64ch; color: var(--muted); }
 
-footer { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 16px; }
+/* clinic cards */
+#g-clinic { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+#g-clinic > h2 { grid-column: 1 / -1; margin-bottom: 4px; }
+#g-clinic .item { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 8px; }
+#g-clinic .item:last-of-type { grid-column: 1 / -1; }
+#g-clinic .item:first-of-type { grid-column: 1 / -1; background: var(--river-soft); border-color: transparent; }
+#g-clinic .item .when { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+#g-clinic .item h3 { font-family: var(--display); font-weight: 500; font-size: 1.4rem; line-height: 1.2; margin: 0; text-wrap: balance; }
+#g-clinic .item:first-of-type h3 { font-size: 1.75rem; }
+#g-clinic .item p { margin: 0; max-width: 70ch; }
+#g-clinic .links { margin-top: auto; padding-top: 6px; }
 
-@media (max-width: 560px) {
-  .item { grid-template-columns: 1fr; }
-  .elf li { grid-template-columns: 1fr; gap: 0; }
-  :root { --step-3: 2rem; }
+/* shared meta */
+.meta { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 0.87rem; color: var(--muted); align-items: center; }
+.meta .role { background: var(--marigold-soft); color: var(--ink); border-radius: 999px; padding: 1px 10px; font-weight: 700; }
+.meta .elf-tag { color: var(--river); font-weight: 700; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.92rem; font-weight: 700; }
+.cite { font-family: var(--display); font-size: 1.05rem; }
+
+/* publications ledger */
+#g-pubs .item, #g-comms .item { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 4px 24px; padding: 18px 0; border-top: 1px solid var(--rule); }
+#g-pubs .item .when, #g-comms .item .when { color: var(--muted); font-size: 0.9rem; padding-top: 4px; font-variant-numeric: tabular-nums; }
+#g-pubs .item h3, #g-comms .item h3 { font-family: var(--display); font-weight: 500; font-size: 1.3rem; line-height: 1.25; margin: 0 0 4px; text-wrap: balance; }
+#g-pubs .item p, #g-comms .item p { margin: 6px 0 0; max-width: 66ch; }
+#g-pubs .links, #g-comms .links { margin-top: 8px; }
+
+/* seminar timeline */
+#g-events { position: relative; }
+.yr-h { margin: 26px 0 8px; font-family: var(--display); font-style: italic; font-weight: 400; font-size: 1.25rem; color: var(--river); }
+.item.event { position: relative; display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 2px 24px; padding: 10px 0 10px 22px; border-left: 2px solid var(--river-soft); margin-left: 6px; }
+.item.event::before { content: ""; position: absolute; left: -7px; top: 17px; width: 12px; height: 12px; border-radius: 50%; background: var(--ground); border: 2px solid var(--river); }
+.item.event:has(.role)::before { background: var(--marigold); border-color: var(--marigold); }
+.item.event .when { color: var(--muted); font-size: 0.88rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.item.event h3 { font-family: var(--display); font-weight: 500; font-size: 1.1rem; line-height: 1.3; margin: 0 0 2px; }
+.item.event p { margin: 4px 0 0; font-size: 0.93rem; max-width: 64ch; }
+
+.empty { color: var(--muted); }
+footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 18px; }
+
+@media (max-width: 760px) {
+  .hero-in { grid-template-columns: 1fr; gap: 36px; padding-block: 44px 56px; }
+  .portrait { order: -1; width: 190px; justify-self: start; margin: 14px 0 0 14px; }
+  #g-clinic { grid-template-columns: 1fr; }
+  #g-pubs .item, #g-comms .item, .item.event { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .item { transition: opacity 160ms ease; }
+  .hero svg.contours path { animation: drift 22s ease-in-out infinite alternate; }
+  .hero svg.contours path:nth-child(even) { animation-duration: 28s; }
+  @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-30px); } }
 }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header>
-    <div class="eyebrow">Selected work</div>
-    <h1>Nate Palmer</h1>
-    <p class="lede">Lecturer in International Environmental Law at SOAS University of London and co-coordinator of the SOAS Environmental Justice Clinic. Policy research, advocacy partnerships and communications on Rights of Nature, rivers and access to environmental justice.</p>
-    <div class="contact">
-      <span>npalmer1119@gmail.com</span>
-      <span>07832 175713</span>
-      <a href="https://www.linkedin.com/in/palmernate/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://soas-repository.worktribe.com/person/300754/nate-palmer" target="_blank" rel="noopener">SOAS Research Online</a>
+<header class="hero">
+  <svg class="contours" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-40 80 C 180 20, 320 150, 540 100 S 900 20, 1240 90"/>
+    <path d="M-40 130 C 200 70, 330 200, 560 150 S 920 70, 1240 140"/>
+    <path d="M-40 185 C 220 120, 350 255, 580 205 S 940 120, 1240 195"/>
+    <path d="M-40 245 C 240 180, 370 315, 600 265 S 960 180, 1240 255"/>
+    <path d="M-40 310 C 260 245, 390 380, 620 330 S 980 245, 1240 320"/>
+    <path d="M-40 380 C 280 315, 410 450, 640 400 S 1000 315, 1240 390"/>
+    <path d="M-40 455 C 300 390, 430 525, 660 475 S 1020 390, 1240 465"/>
+  </svg>
+  <div class="hero-in">
+    <div>
+      <div class="eyebrow">Environmental law · Rights of Nature · Access to justice</div>
+      <h1>Nate Palmer</h1>
+      <p class="statement">Legal research and advocacy with communities, rivers and the people who defend them.</p>
+      <p class="lede">Lecturer in International Environmental Law at SOAS University of London and co-coordinator of the SOAS Environmental Justice Clinic, working on Rights of Nature, water governance and access to environmental justice.</p>
+      <div class="contact">
+        <span>npalmer1119@gmail.com</span>
+        <span>07832 175713</span>
+        <a href="https://www.linkedin.com/in/palmernate/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://soas-repository.worktribe.com/person/300754/nate-palmer" target="_blank" rel="noopener">SOAS Research Online</a>
+      </div>
     </div>
-  </header>
+    <div class="portrait"><img src="headshot.jpg" alt="Portrait of Nate Palmer" width="640" height="640"></div>
+  </div>
+</header>
+
+<div class="wrap">
 
   <div class="filters" role="group" aria-labelledby="filter-label">
     <div class="label" id="filter-label">Filter by theme</div>
