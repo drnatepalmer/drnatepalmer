@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nate Palmer Selected Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single reading column, like a river catchment map key. Header, a band for work with ELF, filters, then a ledger of projects grouped by kind. */
+:root {
+  --ground: #f3f5f3;
+  --surface: #ffffff;
+  --ink: #18242a;
+  --muted: #56656b;
+  --rule: #d5dcdb;
+  --river: #1f5c6e;
+  --river-soft: #e3eef0;
+  --moss: #4b6a3a;
+  --moss-soft: #e8efe2;
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --step-0: 0.95rem;
+  --step-1: 1.15rem;
+  --step-2: 1.5rem;
+  --step-3: 2.4rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #10181b;
+    --surface: #172227;
+    --ink: #e4ebec;
+    --muted: #9aaaae;
+    --rule: #2b3a40;
+    --river: #7fbfcf;
+    --river-soft: #1b3139;
+    --moss: #a5c58e;
+    --moss-soft: #1f2d1d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #10181b;
+  --surface: #172227;
+  --ink: #e4ebec;
+  --muted: #9aaaae;
+  --rule: #2b3a40;
+  --river: #7fbfcf;
+  --river-soft: #1b3139;
+  --moss: #a5c58e;
+  --moss-soft: #1f2d1d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 48px 72px;
+  display: grid;
+  gap: 44px;
+}
+a { color: var(--river); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--river); outline-offset: 2px; border-radius: 3px; }
+
+header { display: grid; gap: 14px; }
+.eyebrow {
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+h1 {
+  font-family: var(--display); font-weight: 500; font-size: var(--step-3);
+  line-height: 1.1; margin: 0; text-wrap: balance;
+}
+.lede { font-family: var(--display); font-size: var(--step-1); max-width: 62ch; margin: 0; color: var(--ink); }
+.contact { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.9rem; color: var(--muted); }
+.contact span { user-select: all; }
+
+/* ELF band */
+.elf {
+  background: var(--moss-soft);
+  border-left: 3px solid var(--moss);
+  padding: 22px 22px 20px;
+  display: grid; gap: 14px;
+}
+.elf h2 { margin: 0; font-family: var(--display); font-weight: 500; font-size: var(--step-2); }
+.elf p { margin: 0; max-width: 64ch; }
+.elf ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.elf li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 12px; align-items: baseline; }
+.elf li .yr { font-variant-numeric: tabular-nums; color: var(--moss); font-weight: 600; font-size: 0.9rem; }
+.elf li a { font-weight: 500; }
+
+/* filters */
+.filters { display: grid; gap: 10px; }
+.filters .label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit; font-size: 0.88rem; cursor: pointer;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 999px; padding: 5px 13px;
+}
+.chip[aria-pressed="true"] { background: var(--river); border-color: var(--river); color: var(--ground); }
+.count { font-size: 0.88rem; color: var(--muted); }
+
+/* ledger */
+section.group { display: grid; gap: 4px; }
+section.group > h2 {
+  font-family: var(--display); font-weight: 500; font-size: var(--step-2);
+  margin: 0 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+}
+.item {
+  display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 4px 20px;
+  padding: 16px 0; border-bottom: 1px solid var(--rule);
+}
+.item .when { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.9rem; padding-top: 3px; }
+.item h3 { margin: 0; font-family: var(--display); font-weight: 500; font-size: var(--step-1); line-height: 1.3; text-wrap: balance; }
+.item .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.85rem; color: var(--muted); margin: 4px 0 6px; }
+.item .meta .role { color: var(--river); font-weight: 600; }
+.item .meta .elf-tag { color: var(--moss); font-weight: 600; }
+.item p { margin: 0; max-width: 66ch; }
+.item .cite { font-family: var(--display); font-size: 1rem; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; font-size: 0.9rem; }
+.empty { color: var(--muted); padding: 16px 0; }
+.intro { margin: 0 0 6px; max-width: 64ch; color: var(--muted); }
+.yr-h {
+  margin: 18px 0 0; font-family: var(--body); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--river);
+}
+.item.event { padding: 10px 0; }
+.item.event h3 { font-size: 1.05rem; }
+.item.event .meta { margin-bottom: 0; }
+.item.event p { margin-top: 4px; font-size: 0.92rem; }
+
+footer { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 16px; }
+
+@media (max-width: 560px) {
+  .item { grid-template-columns: 1fr; }
+  .elf li { grid-template-columns: 1fr; gap: 0; }
+  :root { --step-3: 2rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .item { transition: opacity 160ms ease; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Selected work</div>
+    <h1>Nate Palmer</h1>
+    <p class="lede">Lecturer in International Environmental Law at SOAS University of London and co-coordinator of the SOAS Environmental Justice Clinic. Policy research, advocacy partnerships and communications on Rights of Nature, rivers and access to environmental justice.</p>
+    <div class="contact">
+      <span>npalmer1119@gmail.com</span>
+      <span>07832 175713</span>
+      <a href="https://www.linkedin.com/in/palmernate/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://soas-repository.worktribe.com/person/300754/nate-palmer" target="_blank" rel="noopener">SOAS Research Online</a>
+    </div>
+  </header>
+
+  <aside class="elf" aria-labelledby="elf-h">
+    <h2 id="elf-h">Work with the Environmental Law Foundation</h2>
+    <p>Three clinic projects since 2024 have produced research for ELF on rivers, Rights of Nature and local government.</p>
+    <ol>
+      <li><span class="yr">2025–26</span><a href="#thames">A Charter for the River Thames</a></li>
+      <li><span class="yr">2024</span><a href="#ouse">Rights of Nature on the River Ouse</a></li>
+      <li><span class="yr">2024</span><a href="#climate">Local climate action in South East England</a></li>
+    </ol>
+  </aside>
+
+  <div class="filters" role="group" aria-labelledby="filter-label">
+    <div class="label" id="filter-label">Filter by theme</div>
+    <div class="chips" id="chips">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">All work</button>
+      <button class="chip" type="button" data-f="ron" aria-pressed="false">Rights of Nature</button>
+      <button class="chip" type="button" data-f="water" aria-pressed="false">Rivers and water</button>
+      <button class="chip" type="button" data-f="local" aria-pressed="false">Local government</button>
+      <button class="chip" type="button" data-f="intl" aria-pressed="false">International law</button>
+      <button class="chip" type="button" data-f="elf" aria-pressed="false">With ELF</button>
+    </div>
+    <div class="count" id="count" aria-live="polite"></div>
+  </div>
+
+  <section class="group" id="g-clinic">
+    <h2>Clinic projects and policy reports</h2>
+
+    <article class="item" id="thames" data-tags="ron water local elf">
+      <div class="when">2025–26</div>
+      <div>
+        <h3>A Charter for the River Thames</h3>
+        <div class="meta"><span class="role">Co-supervisor</span><span>LSE Sustainability Law and Policy Clinic, intercollegiate</span><span class="elf-tag">With ELF</span></div>
+        <p>London's first intercollegiate environmental law clinic, with LSE, King's, UCL, SOAS and Birkbeck, tested legal routes to a Thames Charter that treats the river as a stakeholder in decisions affecting it. I co-supervised the strand on bringing the Thames into decision-making procedures. The other strands looked at a joint borough arrangement under the Local Government Act 1972 and at byelaw powers. Three reports, April 2026.</p>
+        <div class="links"><a href="https://www.lse.ac.uk/global-school-of-sustainability/themes/mobilising-political-legal-governance-systems/clinic/intercollegiate/a-charter-for-the-river-thames" target="_blank" rel="noopener">Project and reports</a></div>
+      </div>
+    </article>
+
+    <article class="item" id="ron-report" data-tags="ron intl">
+      <div class="when">Oct 2024</div>
+      <div>
+        <h3>Representing Rights of Nature: A Survey of Representative Forms</h3>
+        <div class="meta"><span class="role">Coordinator</span><span>SOAS Clinic with Lawyers for Nature</span></div>
+        <p>Maps and analyses the models through which Nature is represented in law worldwide, for community organisers, lawyers, NGOs and policymakers. Published as more than 500 Rights of Nature initiatives had been recorded globally.</p>
+        <div class="links">
+          <a href="https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf" target="_blank" rel="noopener">Report (PDF)</a>
+          <a href="https://soas.ac.uk/about/news/soas-environmental-law-clinic-partners-lawyers-nature-rights-nature-representative-model" target="_blank" rel="noopener">SOAS announcement</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" id="ouse" data-tags="ron water local elf">
+      <div class="when">2024</div>
+      <div>
+        <h3>Rights of Nature on the River Ouse</h3>
+        <div class="meta"><span>SOAS Clinic with ELF and Love Our Ouse</span><span class="elf-tag">With ELF</span></div>
+        <p>Students reviewed national legislation and biodiversity records to map UK-protected species along the River Ouse in Sussex. The work supports a river charter intended for endorsement by Lewes District Council. Two reports across two years.</p>
+        <div class="links"><a href="https://www.soas.ac.uk/about/news/soas-students-champion-rights-nature-pro-bono-project-river-ouse" target="_blank" rel="noopener">Project and reports</a></div>
+      </div>
+    </article>
+
+    <article class="item" id="icc" data-tags="intl ron">
+      <div class="when">Mar 2025</div>
+      <div>
+        <h3>Submission to the International Criminal Court on environmental crimes</h3>
+        <div class="meta"><span>SOAS Legal Advice Clinic</span><span>Consultation response, Office of the Prosecutor</span></div>
+        <p>Response to the Draft Policy on Environmental Crimes arguing that ecosystems should be recognised as victims, with amendments to Rules 85 and 89 so that legal guardians can represent the environment, and a UN-led environmental reparations fund.</p>
+        <div class="links">
+          <a href="https://www.soas.ac.uk/sites/default/files/2025-05/SOAS%20Consultation%20Response%20-%20Environmental%20Reparations%20and%20Collective%20Reparations%20%281%29.pdf" target="_blank" rel="noopener">Submission (PDF)</a>
+          <a href="https://www.soas.ac.uk/about/news/soas-environmental-law-clinic-calls-icc-recognise-environment-legal-victim" target="_blank" rel="noopener">SOAS announcement</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" id="climate" data-tags="local elf">
+      <div class="when">Jan 2024</div>
+      <div>
+        <h3>Progress Report on Local Climate Action in South East England</h3>
+        <div class="meta"><span>SOAS Environmental Policy Clinic</span><span class="elf-tag">With ELF</span></div>
+        <p>Eleven postgraduate students reviewed 60 councils' climate emergency declarations and follow-up plans and spoke with local climate action groups, supporting ELF's advocacy on local climate action.</p>
+        <div class="links">
+          <a href="https://www.soas.ac.uk/sites/default/files/2024-01/Progress%20Report%20on%20Local%20Climate%20Action%20in%20South%20East%20England%20-%20SOAS%20Environmental%20Policy%20Clinic%20%281%29.pdf" target="_blank" rel="noopener">Report (PDF)</a>
+          <a href="https://www.soas.ac.uk/about/news/students-study-impact-councils-climate-emergency-declarations" target="_blank" rel="noopener">SOAS announcement</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-tags="local">
+      <div class="when">Clinic</div>
+      <div>
+        <h3>Further Clinic research</h3>
+        <div class="meta"><span>Wildlife Trust · ClientEarth</span></div>
+        <p>A report for the Wildlife Trust on the legal framework for beaver reintroduction in England, and research for ClientEarth tracking fossil fuel companies' environmental commitments.</p>
+        <div class="links"><a href="https://www.ledc.info/degree-programmes/clinic-environmental-law-policy-clinic" target="_blank" rel="noopener">All Clinic projects</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" id="g-pubs">
+    <h2>Research and publications</h2>
+
+    <article class="item" data-tags="ron intl">
+      <div class="when">2026</div>
+      <div>
+        <h3>Biocultural Rights in the Biodiversity Regime</h3>
+        <div class="meta"><span class="role">Author</span><span>Journal article</span></div>
+        <p class="cite">Nate Palmer, ‘Biocultural Rights in the Biodiversity Regime: Relationality and the Limits of Instrumentalism’ (2026) 22(1) <i>Law, Environment and Development Journal</i> 1</p>
+        <div class="links"><a href="https://doi.org/10.25501/soas.00874970" target="_blank" rel="noopener">doi.org/10.25501/soas.00874970</a></div>
+      </div>
+    </article>
+
+    <article class="item" data-tags="ron intl">
+      <div class="when">Forthcoming</div>
+      <div>
+        <h3>Who Speaks for Nature? Rights of Nature, Biocultural Rights, and Pluricentric Legal Design</h3>
+        <div class="meta"><span class="role">Author</span><span>Journal of Human Rights and the Environment, revised and resubmitted</span></div>
+        <p>Argues that Rights of Nature and biocultural rights both derive obligation from legal subjecthood, and develops a framework of pluricentric legal design built on the relationship between community and ecosystem, ecological integrity as a legal priority, and guardianship as accountable institutional voice.</p>
+      </div>
+    </article>
+
+    <article class="item" data-tags="water intl">
+      <div class="when">Jun 2026</div>
+      <div>
+        <h3>WATCON at the AIDA World Water Congress, Oslo</h3>
+        <div class="meta"><span>WATCON project, SOAS</span></div>
+        <p>WATCON's work on sectoral water conflicts, the human right to water and ecological integrity in South Asia, including the case for Rights of Nature, biocultural rights and community-led governance in water law.</p>
+        <div class="links"><a href="https://www.watcon.org/blogs/aida-world-water-congress-2026" target="_blank" rel="noopener">WATCON blog</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" id="g-events">
+    <h2>LEDC Seminar Series</h2>
+    <p class="intro">Public seminars hosted by the Law, Environment and Development Centre at SOAS, 19 events from February 2023 to October 2026, bringing practitioners, communities, barristers and academics to an open audience.</p>
+
+    <h3 class="yr-h">2026–27</h3>
+    <article class="item event" data-tags="local intl"><div class="when">27 Oct 2026</div><div><h3>Legislating for Climate Adaptation, launch of policy brief</h3><div class="meta"><span>SOAS with LRI</span></div></div></article>
+    <article class="item event" data-tags="intl"><div class="when">8 Oct 2026</div><div><h3>From ESG to Corporate Accountability: Emerging Issues in Sustainability and Carbon Markets</h3><div class="meta"><span>Marta Simonetti (SOAS) · Yuhina Sangha (Dhirubhai Ambani University) · Professor Philippe Cullet (SOAS)</span></div></div></article>
+
+    <h3 class="yr-h">2025–26</h3>
+    <article class="item event" data-tags="intl"><div class="when">20 Apr 2026</div><div><h3>Customary Law Recognition and Indigenous Forest Tenure in Southeast Asia</h3><div class="meta"><span>Dr Mark West, Landesa</span></div></div></article>
+    <article class="item event" data-tags=""><div class="when">16 Apr 2026</div><div><h3>Careers in Environmental Law, Policy and Advocacy</h3><div class="meta"><span>Illari Aragon (Christian Aid) · Zoe Wedderburn-Day (Fish Legal) · Luciano Asinelli (Impact Cubed), all SOAS alumni</span></div></div></article>
+    <article class="item event" data-tags="intl"><div class="when">19 Mar 2026</div><div><h3>The Pacific's role in the ICJ proceedings on climate change</h3><div class="meta"><span>Harj Narulla, Doughty Street Chambers</span></div></div></article>
+    <article class="item event" data-tags="intl"><div class="when">12 Mar 2026</div><div><h3>Ecocide and the Legality Exception</h3><div class="meta"><span>Dr Matthew Gillett, University of Essex</span></div></div></article>
+    <article class="item event" data-tags="intl"><div class="when">30 Oct 2025</div><div><h3>Ecocide, Imperialism and Palestine Liberation</h3><div class="meta"><span>Dr Hamza Hamouchene, Transnational Institute</span></div></div></article>
+    <article class="item event" data-tags="ron intl"><div class="when">23 Oct 2025</div><div><h3>Legal Pluralism, Rights of Nature and Inter-Judicial Exchange</h3><div class="meta"><span>Dr Iona McEntee, University of Strathclyde</span></div></div></article>
+    <article class="item event" data-tags="intl"><div class="when">16 Oct 2025</div><div><h3>Reparations for the climate and biodiversity crises</h3><div class="meta"><span>Meghna Abraham, Future Economy Incubator</span></div></div></article>
+
+    <h3 class="yr-h">2024–25</h3>
+    <article class="item event" data-tags="intl"><div class="when">19 Mar 2025</div><div><h3>Impact of climate policies on human mobility and energy security in Bangladesh</h3><div class="meta"><span>KMS Tareq · Sharowat Shamin (SOAS) · Chair, Professor Martin Lau</span></div></div></article>
+    <article class="item event" data-tags="water intl"><div class="when">26 Feb 2025</div><div><h3>The Toxic Legacy of Oil in Nigeria: The Bille and Ogale Communities Against Shell</h3><div class="meta"><span>HRH Emere Godwin Bebe Okpabi, King of Ogale · the community's legal team at Leigh Day</span></div><p>Held the week the High Court in London heard the communities' claim against Shell over pollution in the Niger Delta.</p></div></article>
+    <article class="item event" data-tags="ron water intl"><div class="when">20 Feb 2025</div><div><h3>Harmony with Nature and River Rights in Bangladesh</h3><div class="meta"><span class="role">Speaker</span><span>Nate Palmer · Mohammad Sarwar (SOAS) · Chair, Professor Jérémie Gilbert</span></div></div></article>
+    <article class="item event" data-tags="water intl"><div class="when">23 Jan 2025</div><div><h3>Water Scarcity and Climate Justice in the GCC</h3><div class="meta"><span>Sara Al Mohanadi · Naser Al Sayed (SOAS) · Dr Esmat Zaidan (HBKU)</span></div></div></article>
+    <article class="item event" data-tags="water"><div class="when">28 Nov 2024</div><div><h3>Hinterland contestation: urbanising waters in Chennai</h3><div class="meta"><span>Dr Viswanathan Venkataraman (King's) · Dr Niranjana R (Queen Mary)</span></div></div></article>
+
+    <h3 class="yr-h">2023–24</h3>
+    <article class="item event" data-tags="ron water intl"><div class="when">16 Nov 2023</div><div><h3>Rights, Human Rights and Rivers</h3><div class="meta"><span>Dr Rebecca Bates, Queen Mary University of London</span></div></div></article>
+    <article class="item event" data-tags="intl"><div class="when">2 Nov 2023</div><div><h3>The Biodiversity Convention and Institutional Development</h3><div class="meta"><span>Dr Andreas Kotsakis, Kent Law School</span></div></div></article>
+    <article class="item event" data-tags="intl"><div class="when">12 Oct 2023</div><div><h3>BBNJ Treaty (Treaty of the High Seas) panel</h3><div class="meta"><span>Professor Irini Papanicolopulu · Dr Megan Wong · Dr Efthymios Papastavridis</span></div></div></article>
+
+    <h3 class="yr-h">2022–23</h3>
+    <article class="item event" data-tags=""><div class="when">22 Jun 2023</div><div><h3>What Does Post Growth Mean for Law, Human Rights and Development?</h3><div class="meta"><span>Dr Margot Salomon (LSE) · Ashish Kothari (Kalpavriksh) · Professor Sam Adelman (Warwick)</span></div></div></article>
+    <article class="item event" data-tags="ron"><div class="when">9 Feb 2023</div><div><h3>Rights of Nature and Beyond</h3><div class="meta"><span>Shrishtee Bajpai, Kalpavriksh and Global Alliance for the Rights of Nature</span></div></div></article>
+  </section>
+
+  <section class="group" id="g-comms">
+    <h2>Communications I run</h2>
+
+    <article class="item" data-tags="">
+      <div class="when">2026</div>
+      <div>
+        <h3>Law, Environment and Development Centre website</h3>
+        <div class="meta"><span class="role">Lead</span><span>New site, under construction</span></div>
+        <p>A rebuilt site for the Centre, its degree programmes, seminar series, research and the Clinic's project portfolio.</p>
+        <div class="links"><a href="https://www.ledc.info/degree-programmes/clinic-environmental-law-policy-clinic" target="_blank" rel="noopener">ledc.info</a></div>
+      </div>
+    </article>
+
+    <article class="item" data-tags="">
+      <div class="when">Ongoing</div>
+      <div>
+        <h3>SOAS LEDC on LinkedIn</h3>
+        <div class="meta"><span class="role">Manager</span><span>Organisational page</span></div>
+        <p>The Centre's LinkedIn presence, sharing Clinic outputs, events and research.</p>
+        <div class="links"><a href="https://www.linkedin.com/company/88644843" target="_blank" rel="noopener">LEDC LinkedIn page</a></div>
+      </div>
+    </article>
+  </section>
+
+  <p class="empty" id="empty" hidden>No work matches this theme yet.</p>
+
+  <footer>Clinic projects are the work of student teams supervised by SOAS staff. Roles shown are my own.</footer>
+</div>
+
+<script>
+(function () {
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var items = Array.prototype.slice.call(document.querySelectorAll('.item'));
+  var groups = Array.prototype.slice.call(document.querySelectorAll('section.group'));
+  var count = document.getElementById('count');
+  var empty = document.getElementById('empty');
+
+  function apply(f) {
+    var shown = 0;
+    items.forEach(function (el) {
+      var tags = (el.getAttribute('data-tags') || '').split(' ');
+      var on = f === 'all' || tags.indexOf(f) !== -1;
+      el.hidden = !on;
+      if (on) shown++;
+    });
+    groups.forEach(function (g) {
+      g.hidden = g.querySelectorAll('.item:not([hidden])').length === 0;
+    });
+    Array.prototype.slice.call(document.querySelectorAll('.yr-h')).forEach(function (h) {
+      var any = false, n = h.nextElementSibling;
+      while (n && !n.classList.contains('yr-h')) { if (n.classList.contains('item') && !n.hidden) any = true; n = n.nextElementSibling; }
+      h.hidden = !any;
+    });
+    empty.hidden = shown !== 0;
+    count.textContent = shown + (shown === 1 ? ' item' : ' items');
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.f === f)); });
+    try { localStorage.setItem('np-filter', f); } catch (e) {}
+  }
+
+  chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.dataset.f); }); });
+  var start = 'all';
+  try { start = localStorage.getItem('np-filter') || 'all'; } catch (e) {}
+  if (!chips.some(function (c) { return c.dataset.f === start; })) start = 'all';
+  apply(start);
+})();
+</script>
+
+</body>
+</html>
