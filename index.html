@@ -3,70 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nate Palmer Selected Work</title>
+<title>Dr Nate Palmer Selected Work</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap">
 <style>
 /* Layout: SOAS palette. A dark-blue hero with the portrait, then clinic work as cards (lead card larger), publications as a ledger, seminars along a timeline. One typeface (Mulish, a web stand-in for SOAS's Museo Sans); hierarchy by size, weight and colour only. */
+/* Single light look by design. */
 :root {
-  --hero: #1b1f54;          /* SOAS Dark Blue */
+  color-scheme: light;
+  --hero: #10122a;          /* deepest blue */
   --hero-ink: #ffffff;
   --hero-soft: #c9cbe6;
-  --ground: #f5f7f8;
+  --ground: #f4e7d8;         /* SOAS Stone */
   --surface: #ffffff;
   --ink: #1b1f54;
   --text: #2c2f45;
-  --muted: #5f6377;
-  --rule: #dfe3ea;
+  --muted: #5d5a66;
+  --rule: #e3d3c0;
   --sea: #00869d;           /* SOAS Sea Blue */
-  --sea-text: #006f82;
+  --sea-text: #006577;
   --sea-soft: #e0f1f4;
   --gold: #fbba00;          /* SOAS Gold */
-  --gold-soft: #fff1c7;
+  --gold-soft: #fcd25c;
   --coral: #dcadb6;         /* SOAS Coral */
   --coral-soft: #f7e8eb;
   --font: "Mulish", "Museo Sans", Arial, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --hero: #14173f;
-    --hero-ink: #ffffff;
-    --hero-soft: #b9bcdf;
-    --ground: #10122a;
-    --surface: #181b3a;
-    --ink: #f2f3fb;
-    --text: #d9dbe8;
-    --muted: #a3a6bf;
-    --rule: #2a2e52;
-    --sea: #3fb6ca;
-    --sea-text: #6fcad9;
-    --sea-soft: #15324a;
-    --gold: #fbba00;
-    --gold-soft: #3b3112;
-    --coral: #e3b7c0;
-    --coral-soft: #3a2630;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --hero: #14173f;
-  --hero-ink: #ffffff;
-  --hero-soft: #b9bcdf;
-  --ground: #10122a;
-  --surface: #181b3a;
-  --ink: #f2f3fb;
-  --text: #d9dbe8;
-  --muted: #a3a6bf;
-  --rule: #2a2e52;
-  --sea: #3fb6ca;
-  --sea-text: #6fcad9;
-  --sea-soft: #15324a;
-  --gold: #fbba00;
-  --gold-soft: #3b3112;
-  --coral: #e3b7c0;
-  --coral-soft: #3a2630;
-  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--ground); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; font-weight: 400; }
@@ -168,7 +130,7 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
   <div class="hero-in">
     <div>
       <div class="eyebrow">Environmental law · Rights of Nature · Access to justice</div>
-      <h1>Nate Palmer</h1>
+      <h1>Dr Nate Palmer</h1>
       <p class="statement">Legal research and advocacy with communities, rivers and the people who defend them.</p>
       <p class="lede">Lecturer in International Environmental Law at SOAS University of London and co-coordinator of the SOAS Environmental Justice Clinic, working on Rights of Nature, water governance and access to environmental justice.</p>
       <div class="contact">
@@ -182,17 +144,48 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
 </header>
 
 <div class="wrap">
-  <div class="filters" role="group" aria-labelledby="filter-label">
-    <div class="label" id="filter-label">Filter by theme</div>
-    <div class="chips" id="chips">
-      <button class="chip" type="button" data-f="all" aria-pressed="true">All work</button>
-      <button class="chip" type="button" data-f="ron" aria-pressed="false">Rights of Nature</button>
-      <button class="chip" type="button" data-f="water" aria-pressed="false">Rivers and water</button>
-      <button class="chip" type="button" data-f="local" aria-pressed="false">Local government</button>
-      <button class="chip" type="button" data-f="intl" aria-pressed="false">International law</button>
-    </div>
-    <div class="count" id="count" aria-live="polite"></div>
-  </div>
+  <section class="group" id="g-pubs">
+    <h2>Research and publications</h2>
+
+    <article class="item" data-tags="ron water">
+      <div class="when">2026</div>
+      <div>
+        <h3>Harmony with Nature: Evolving Dimensions of Water Governance in India</h3>
+        <div class="meta"><span class="role">PhD thesis</span><span>SOAS University of London</span></div>
+        <p>Socio-legal research in Delhi and Meghalaya, including around ten weeks of fieldwork with Khasi communities in Shillong. Supervised by Professor Philippe Cullet (SOAS) and Dr Izabela Delabre (Birkbeck). Funded by a Bloomsbury PhD Studentship.</p>
+        <div class="links"><a href="https://doi.org/10.25501/soas.1122765" target="_blank" rel="noopener">doi.org/10.25501/soas.1122765</a></div>
+      </div>
+    </article>
+
+    <article class="item" data-tags="ron intl">
+      <div class="when">2026</div>
+      <div>
+        <h3>Biocultural Rights in the Biodiversity Regime</h3>
+        <div class="meta"><span class="role">Author</span><span>Journal article</span></div>
+        <p class="cite">Nate Palmer, ‘Biocultural Rights in the Biodiversity Regime: Relationality and the Limits of Instrumentalism’ (2026) 22(1) Law, Environment and Development Journal 1</p>
+        <div class="links"><a href="https://doi.org/10.25501/soas.00874970" target="_blank" rel="noopener">doi.org/10.25501/soas.00874970</a></div>
+      </div>
+    </article>
+
+    <article class="item" data-tags="ron intl">
+      <div class="when">Forthcoming</div>
+      <div>
+        <h3>Who Speaks for Nature? Rights of Nature, Biocultural Rights, and Pluricentric Legal Design</h3>
+        <div class="meta"><span class="role">Author</span><span>Journal article, publication pending</span></div>
+        <p>Proposes a framework of pluricentric legal design that grounds legal obligation in the relationship between communities and ecosystems.</p>
+      </div>
+    </article>
+
+    <article class="item" data-tags="water intl">
+      <div class="when">Jun 2026</div>
+      <div>
+        <h3>WATCON at the AIDA World Water Congress, Oslo</h3>
+        <div class="meta"><span>WATCON project, SOAS</span></div>
+        <p>WATCON's work on sectoral water conflicts, the human right to water and ecological integrity in South Asia, including the case for Rights of Nature, biocultural rights and community-led governance in water law.</p>
+        <div class="links"><a href="https://www.watcon.org/blogs/aida-world-water-congress-2026" target="_blank" rel="noopener">WATCON blog</a></div>
+      </div>
+    </article>
+  </section>
 
   <section class="group" id="g-clinic">
     <h2>Clinic projects and policy reports</h2>
@@ -255,48 +248,6 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
     </article>
   </section>
 
-  <section class="group" id="g-pubs">
-    <h2>Research and publications</h2>
-
-    <article class="item" data-tags="ron water">
-      <div class="when">2026</div>
-      <div>
-        <h3>Harmony with Nature: Evolving Dimensions of Water Governance in India</h3>
-        <div class="meta"><span class="role">PhD thesis</span><span>SOAS University of London</span></div>
-        <p>Socio-legal research in Delhi and Meghalaya, including around ten weeks of fieldwork with Khasi communities in Shillong. Supervised by Professor Philippe Cullet (SOAS) and Dr Izabela Delabre (Birkbeck). Funded by a Bloomsbury PhD Studentship.</p>
-      </div>
-    </article>
-
-    <article class="item" data-tags="ron intl">
-      <div class="when">2026</div>
-      <div>
-        <h3>Biocultural Rights in the Biodiversity Regime</h3>
-        <div class="meta"><span class="role">Author</span><span>Journal article</span></div>
-        <p class="cite">Nate Palmer, ‘Biocultural Rights in the Biodiversity Regime: Relationality and the Limits of Instrumentalism’ (2026) 22(1) Law, Environment and Development Journal 1</p>
-        <div class="links"><a href="https://doi.org/10.25501/soas.00874970" target="_blank" rel="noopener">doi.org/10.25501/soas.00874970</a></div>
-      </div>
-    </article>
-
-    <article class="item" data-tags="ron intl">
-      <div class="when">Forthcoming</div>
-      <div>
-        <h3>Who Speaks for Nature? Rights of Nature, Biocultural Rights, and Pluricentric Legal Design</h3>
-        <div class="meta"><span class="role">Author</span><span>Journal article, publication pending</span></div>
-        <p>Proposes a framework of pluricentric legal design that grounds legal obligation in the relationship between communities and ecosystems.</p>
-      </div>
-    </article>
-
-    <article class="item" data-tags="water intl">
-      <div class="when">Jun 2026</div>
-      <div>
-        <h3>WATCON at the AIDA World Water Congress, Oslo</h3>
-        <div class="meta"><span>WATCON project, SOAS</span></div>
-        <p>WATCON's work on sectoral water conflicts, the human right to water and ecological integrity in South Asia, including the case for Rights of Nature, biocultural rights and community-led governance in water law.</p>
-        <div class="links"><a href="https://www.watcon.org/blogs/aida-world-water-congress-2026" target="_blank" rel="noopener">WATCON blog</a></div>
-      </div>
-    </article>
-  </section>
-
   <section class="group" id="g-events">
     <h2>LEDC Seminar Series</h2>
     <p class="intro">Public seminars hosted by the Law, Environment and Development Centre at SOAS, 19 events from February 2023 to October 2026, bringing practitioners, communities, barristers and academics to an open audience.</p>
@@ -355,48 +306,10 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
     </article>
   </section>
 
-  <p class="empty" id="empty" hidden>No work matches this theme yet.</p>
 
   <footer>Clinic projects are the work of student teams supervised by SOAS staff. Roles shown are my own.</footer>
 </div>
 
-<script>
-(function () {
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  var items = Array.prototype.slice.call(document.querySelectorAll('.item'));
-  var groups = Array.prototype.slice.call(document.querySelectorAll('section.group'));
-  var count = document.getElementById('count');
-  var empty = document.getElementById('empty');
-
-  function apply(f) {
-    var shown = 0;
-    items.forEach(function (el) {
-      var tags = (el.getAttribute('data-tags') || '').split(' ');
-      var on = f === 'all' || tags.indexOf(f) !== -1;
-      el.hidden = !on;
-      if (on) shown++;
-    });
-    groups.forEach(function (g) {
-      g.hidden = g.querySelectorAll('.item:not([hidden])').length === 0;
-    });
-    Array.prototype.slice.call(document.querySelectorAll('.yr-h')).forEach(function (h) {
-      var any = false, n = h.nextElementSibling;
-      while (n && !n.classList.contains('yr-h')) { if (n.classList.contains('item') && !n.hidden) any = true; n = n.nextElementSibling; }
-      h.hidden = !any;
-    });
-    empty.hidden = shown !== 0;
-    count.textContent = shown + (shown === 1 ? ' item' : ' items');
-    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.f === f)); });
-    try { localStorage.setItem('np-filter', f); } catch (e) {}
-  }
-
-  chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.dataset.f); }); });
-  var start = 'all';
-  try { start = localStorage.getItem('np-filter') || 'all'; } catch (e) {}
-  if (!chips.some(function (c) { return c.dataset.f === start; })) start = 'all';
-  apply(start);
-})();
-</script>
 
 </body>
 </html>
