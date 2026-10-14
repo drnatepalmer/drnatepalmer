@@ -9,25 +9,26 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap">
 <style>
 /* Layout: SOAS palette. A dark-blue hero with the portrait, then clinic work as cards (lead card larger), publications as a ledger, seminars along a timeline. One typeface (Mulish, a web stand-in for SOAS's Museo Sans); hierarchy by size, weight and colour only. */
-/* Single light look by design. */
+/* Single dark-blue look by design: header and body share one blue; cards are translucent Sea Blue. */
 :root {
-  color-scheme: light;
-  --hero: #10122a;          /* deepest blue */
+  color-scheme: dark;
+  --hero: #10122a;
   --hero-ink: #ffffff;
-  --hero-soft: #c9cbe6;
-  --ground: #f4e7d8;         /* SOAS Stone */
-  --surface: #ffffff;
-  --ink: #1b1f54;
-  --text: #2c2f45;
-  --muted: #5d5a66;
-  --rule: #e3d3c0;
-  --sea: #00869d;           /* SOAS Sea Blue */
-  --sea-text: #006577;
-  --sea-soft: #e0f1f4;
-  --gold: #fbba00;          /* SOAS Gold */
-  --gold-soft: #fcd25c;
-  --coral: #dcadb6;         /* SOAS Coral */
-  --coral-soft: #f7e8eb;
+  --hero-soft: #c3c6e0;
+  --ground: #10122a;
+  --surface: rgba(0, 134, 157, 0.14);
+  --surface-line: rgba(63, 182, 202, 0.32);
+  --ink: #ffffff;
+  --text: #dfe1ee;
+  --muted: #a9acc6;
+  --rule: rgba(255, 255, 255, 0.14);
+  --sea: #00869d;
+  --sea-text: #7fd3e0;
+  --gold: #fbba00;
+  --gold-soft: #fbba00;
+  --on-gold: #10122a;
+  --coral: #dcadb6;
+  --coral-soft: rgba(220, 173, 182, 0.35);
   --font: "Mulish", "Museo Sans", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -82,14 +83,14 @@ section.group > h2 { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.1rem); li
 /* shared meta */
 .when { font-size: 0.85rem; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
 .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 0.87rem; color: var(--muted); align-items: center; }
-.meta .role { background: var(--gold-soft); color: var(--ink); border-radius: 999px; padding: 1px 10px; font-weight: 800; }
+.meta .role { background: var(--gold-soft); color: var(--on-gold); border-radius: 999px; padding: 1px 10px; font-weight: 800; }
 .links { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.92rem; font-weight: 700; }
 .cite { font-style: italic; }
 
 /* clinic and policy cards */
 #g-clinic { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 #g-clinic > h2 { grid-column: 1 / -1; margin-bottom: 4px; }
-#g-clinic .item { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 8px; }
+#g-clinic .item { background: var(--surface); border: 1px solid var(--surface-line); border-radius: 14px; padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 8px; }
 #g-clinic .item.lead { grid-column: 1 / -1; padding: 28px 28px 24px; }
 #g-clinic .item.wide { grid-column: 1 / -1; }
 #g-clinic .item h3 { font-weight: 800; font-size: 1.25rem; line-height: 1.25; }
@@ -152,7 +153,7 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
       <div>
         <h3>Harmony with Nature: Evolving Dimensions of Water Governance in India</h3>
         <div class="meta"><span class="role">PhD thesis</span><span>SOAS University of London</span></div>
-        <p>Socio-legal research in Delhi and Meghalaya, including around ten weeks of fieldwork with Khasi communities in Shillong. Supervised by Professor Philippe Cullet (SOAS) and Dr Izabela Delabre (Birkbeck). Funded by a Bloomsbury PhD Studentship.</p>
+        <p>This thesis develops a non-anthropocentric framework for water governance grounded in the principles of harmony with Nature and offers a pathway toward more equitable, ecologically responsive, and legally coherent approaches to water governance.</p>
         <div class="links"><a href="https://doi.org/10.25501/soas.1122765" target="_blank" rel="noopener">doi.org/10.25501/soas.1122765</a></div>
       </div>
     </article>
@@ -173,16 +174,6 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
         <h3>Who Speaks for Nature? Rights of Nature, Biocultural Rights, and Pluricentric Legal Design</h3>
         <div class="meta"><span class="role">Author</span><span>Journal article, publication pending</span></div>
         <p>Proposes a framework of pluricentric legal design that grounds legal obligation in the relationship between communities and ecosystems.</p>
-      </div>
-    </article>
-
-    <article class="item" data-tags="water intl">
-      <div class="when">Jun 2026</div>
-      <div>
-        <h3>WATCON at the AIDA World Water Congress, Oslo</h3>
-        <div class="meta"><span>WATCON project, SOAS</span></div>
-        <p>WATCON's work on sectoral water conflicts, the human right to water and ecological integrity in South Asia, including the case for Rights of Nature, biocultural rights and community-led governance in water law.</p>
-        <div class="links"><a href="https://www.watcon.org/blogs/aida-world-water-congress-2026" target="_blank" rel="noopener">WATCON blog</a></div>
       </div>
     </article>
   </section>
@@ -239,7 +230,15 @@ footer { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--ru
       </div>
     </article>
 
-    <article class="item wide" data-tags="local">
+    <article class="item" data-tags="water intl">
+      <div class="when">Jun 2026</div>
+      <h3>WATCON at the AIDA World Water Congress, Oslo</h3>
+      <div class="meta"><span>WATCON project, SOAS · International Association for Water Law</span></div>
+      <p>WATCON's work on sectoral water conflicts, the human right to water and ecological integrity in South Asia, including the case for Rights of Nature, biocultural rights and community-led governance in water law.</p>
+      <div class="links"><a href="https://www.watcon.org/blogs/aida-world-water-congress-2026" target="_blank" rel="noopener">WATCON blog</a></div>
+    </article>
+
+    <article class="item" data-tags="local">
       <div class="when">Clinic</div>
       <h3>Further Clinic research</h3>
       <div class="meta"><span>Wildlife Trust · ClientEarth</span></div>
