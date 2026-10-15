@@ -37,7 +37,8 @@
   "knowsAbout": ["International environmental law", "Rights of Nature", "Water governance", "Environmental justice", "Biocultural rights", "Harmony with Nature"],
   "sameAs": [
     "https://www.linkedin.com/in/palmernate/",
-    "https://soas-repository.worktribe.com/person/300754/nate-palmer"
+    "https://soas-repository.worktribe.com/person/300754/nate-palmer",
+    "https://www.soas.ac.uk/about/nate-palmer"
   ]
 }
 </script>
@@ -168,12 +169,109 @@ footer .container { padding-block: 26px 40px; font-size: 0.9rem; display: flex; 
 @media (prefers-reduced-motion: no-preference) {
   a, .card { transition: text-decoration-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease; }
 }
+
+/* navigation */
+html { scroll-padding-top: 76px; scroll-behavior: auto; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+.sitenav { position: sticky; top: 0; z-index: 20; background: var(--dark-blue); border-bottom: 1px solid rgba(255,255,255,0.12); }
+.sitenav .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 58px; }
+.sitenav .brand { color: var(--white); text-decoration: none; font-weight: 800; font-size: 0.98rem; white-space: nowrap; }
+.sitenav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px 22px; flex-wrap: wrap; justify-content: flex-end; }
+.sitenav a.navlink { color: #e6e7f2; text-decoration: none; font-size: 0.9rem; font-weight: 700; padding: 6px 0; border-bottom: 2px solid transparent; }
+.sitenav a.navlink:hover { color: var(--white); border-bottom-color: var(--gold); }
+.sitenav a.navlink[aria-current="true"] { color: var(--white); border-bottom-color: var(--gold); }
+.sitenav :focus-visible { outline-color: var(--gold); }
+main section[id] { scroll-margin-top: 76px; }
+
+/* about */
+.about { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; padding-top: 72px; }
+.about .label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sea); padding-top: 6px; }
+.about p { max-width: var(--measure); font-size: 1.05rem; }
+
+/* publications */
+.row .argument { margin-top: 10px; }
+.row .argument strong { color: var(--dark-blue); font-weight: 700; }
+
+/* card extras */
+.card .team { font-size: 0.9rem; }
+.card blockquote { margin: 4px 0 0; padding-left: 14px; border-left: 2px solid var(--sea); font-style: italic; }
+.card blockquote cite { display: block; font-style: normal; font-size: 0.85rem; margin-top: 4px; }
+
+/* activities and service rows (quieter than cards) */
+.rows.quiet .row { padding: 22px 0; }
+.rows.quiet .row h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.memberships { margin-left: 232px; padding: 22px 0; border-bottom: 1px solid var(--rule); max-width: var(--measure); }
+.memberships h3 { font-size: 0.82rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+
+/* teaching */
+.teach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-left: 232px; padding-top: 22px; }
+.teach .block { background: var(--white); border: 1px solid var(--rule-strong); border-radius: 6px; padding: 22px 24px; }
+.teach .block.wide { grid-column: 1 / -1; }
+.sitenav .short { display: none; }
+.teach h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
+.teach ul { margin: 0; padding-left: 1.1em; }
+.teach li + li { margin-top: 4px; }
+
+/* seminars: upcoming */
+.upcoming { margin-left: 232px; padding: 22px 0 6px; }
+.upcoming h3, .past-head { font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; }
+.past-head { margin: 26px 0 8px 232px; }
+.event-card { background: var(--white); border: 1px solid var(--rule-strong); border-left: 4px solid var(--gold); border-radius: 6px; padding: 20px 24px; display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 6px 24px; }
+.event-card + .event-card { margin-top: 14px; }
+.event-card time { font-weight: 800; color: var(--dark-blue); font-variant-numeric: tabular-nums; }
+.event-card h4 { font-size: 1.15rem; font-weight: 800; line-height: 1.35; }
+.event-card .details { font-size: 0.95rem; margin-top: 4px; }
+.flag { display: inline-block; background: var(--gold); color: var(--dark-blue); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 9px; border-radius: 3px; margin-bottom: 6px; }
+
+/* contact */
+.contact-block { margin-left: 232px; padding-top: 26px; display: grid; gap: 18px; }
+.contact-block .email { font-size: clamp(1.3rem, 2.6vw, 1.7rem); font-weight: 800; }
+.contact-block .label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); margin-bottom: 2px; }
+
+@media (max-width: 960px) {
+  .about { grid-template-columns: 140px minmax(0, 1fr); gap: 24px; }
+  .memberships, .teach, .upcoming, .contact-block { margin-left: 164px; }
+  .past-head { margin-left: 164px; }
+  .sitenav ul { gap: 4px 16px; }
+}
+@media (max-width: 860px) {
+  .sitenav .container { flex-direction: column; align-items: stretch; gap: 0; min-height: 0; padding-block: 8px 0; }
+  .sitenav ul { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 6px; scrollbar-width: none; }
+  .sitenav ul::-webkit-scrollbar { display: none; }
+  .sitenav li { flex: 0 0 auto; }
+  .sitenav .long { display: none; }
+  .sitenav .short { display: inline; }
+  .sitenav ul { gap: 4px 18px; }
+  html { scroll-padding-top: 96px; }
+  main section[id] { scroll-margin-top: 96px; }
+}
+@media (max-width: 720px) {
+  .about { grid-template-columns: 1fr; gap: 6px; padding-top: 52px; }
+  .memberships, .teach, .upcoming, .contact-block { margin-left: 0; }
+  .past-head { margin-left: 0; }
+  .teach { grid-template-columns: 1fr; }
+  .event-card { grid-template-columns: 1fr; padding: 18px 18px; }
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="hero">
+<nav class="sitenav" aria-label="Sections">
+  <div class="container">
+    <a class="brand" href="#top">Dr Nate Palmer</a>
+    <ul>
+      <li><a class="navlink" href="#research">Research</a></li>
+      <li><a class="navlink" href="#clinic">Clinic</a></li>
+      <li><a class="navlink" href="#activities" aria-label="Professional activities"><span class="long">Professional activities</span><span class="short" aria-hidden="true">Activities</span></a></li>
+      <li><a class="navlink" href="#teaching">Teaching</a></li>
+      <li><a class="navlink" href="#seminars">Seminars</a></li>
+      <li><a class="navlink" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
   <div class="container">
     <div>
       <span class="kicker">Environmental law · Rights of Nature · Access to justice</span>
@@ -192,25 +290,32 @@ footer .container { padding-block: 26px 40px; font-size: 0.9rem; display: flex; 
 
 <main id="main" class="container">
 
+  <div class="about" aria-labelledby="h-about">
+    <h2 class="label" id="h-about">About</h2>
+    <p>Nate Palmer is Lecturer in International Environmental Law at SOAS University of London, where he is Lead on Experiential Learning and Engagement at the Law, Environment and Development Centre and co-coordinates the SOAS Environmental Justice Clinic. His research examines Rights of Nature, water governance and environmental justice, combining doctrinal and socio-legal methods. His doctoral thesis, completed at SOAS in 2026 with a Bloomsbury PhD Studentship, developed a framework for water governance grounded in harmony with Nature, drawing on fieldwork in Delhi and Meghalaya. He is an Expert Member of the UN Harmony with Nature Programme and Assistant Editor of the Law, Environment and Development (LEAD) Journal.</p>
+  </div>
+
   <section id="research" aria-labelledby="h-research">
     <div class="section-head"><span class="num">01</span><h2 id="h-research">Research and publications</h2></div>
     <ol class="rows">
       <li class="row">
-        <time>2026</time>
+        <time datetime="2026">2026</time>
         <div>
           <h3>Harmony with Nature: Evolving Dimensions of Water Governance in India</h3>
           <p class="type"><span class="badge">PhD thesis</span>SOAS University of London</p>
           <p>This thesis develops a non-anthropocentric framework for water governance grounded in the principles of harmony with Nature and offers a pathway toward more equitable, ecologically responsive, and legally coherent approaches to water governance.</p>
-          <div class="links"><a href="https://doi.org/10.25501/soas.1122765" target="_blank" rel="noopener">doi.org/10.25501/soas.1122765</a></div>
+          <p class="argument"><strong>Argument in brief.</strong> Dominant water governance models rest on instrumental, human-centred assumptions that sideline plural understandings of water. Through a case study of India, focused on Meghalaya, the thesis shows how these models are reproduced across local, national and international scales, and argues that just water governance must rebalance the intrinsic, relational and instrumental values of water.</p>
+          <p class="cite">Nate Palmer, ‘Harmony with Nature: Evolving Dimensions of Water Governance in India’ (PhD thesis, SOAS University of London 2026) https://doi.org/10.25501/soas.1122765</p>
+          <div class="links"><a href="https://doi.org/10.25501/soas.1122765" target="_blank" rel="noopener" aria-label="Read thesis: Harmony with Nature (opens SOAS Research Online)">Read thesis</a></div>
         </div>
       </li>
       <li class="row">
-        <time>2026</time>
+        <time datetime="2026">2026</time>
         <div>
           <h3>Biocultural Rights in the Biodiversity Regime</h3>
           <p class="type"><span class="badge">Author</span>Journal article</p>
-          <p class="cite">Nate Palmer, ‘Biocultural Rights in the Biodiversity Regime: Relationality and the Limits of Instrumentalism’ (2026) 22(1) Law, Environment and Development Journal 1</p>
-          <div class="links"><a href="https://doi.org/10.25501/soas.00874970" target="_blank" rel="noopener">doi.org/10.25501/soas.00874970</a></div>
+          <p class="cite">Nate Palmer, ‘Biocultural Rights in the Biodiversity Regime: Relationality and the Limits of Instrumentalism’ (2026) 22(1) Law, Environment and Development Journal 1 https://doi.org/10.25501/soas.00874970</p>
+          <div class="links"><a href="https://doi.org/10.25501/soas.00874970" target="_blank" rel="noopener" aria-label="Read article: Biocultural Rights in the Biodiversity Regime">Read article</a></div>
         </div>
       </li>
       <li class="row">
@@ -219,6 +324,7 @@ footer .container { padding-block: 26px 40px; font-size: 0.9rem; display: flex; 
           <h3>Who Speaks for Nature? Rights of Nature, Biocultural Rights, and Pluricentric Legal Design</h3>
           <p class="type"><span class="badge">Author</span>Journal article, publication pending</p>
           <p>Proposes a framework of pluricentric legal design that grounds legal obligation in the relationship between communities and ecosystems.</p>
+          <p class="argument"><strong>Argument in brief.</strong> Rights of Nature and biocultural rights both answer the question of who speaks for Nature by deriving obligation from legal subjecthood, whether ecological or human. The article argues for grounding obligation in the relationship between community and ecosystem instead, with ecological integrity as a legal priority and guardianship as accountable institutional voice.</p>
         </div>
       </li>
     </ol>
@@ -233,15 +339,15 @@ footer .container { padding-block: 26px 40px; font-size: 0.9rem; display: flex; 
         <span class="when">2025/26</span>
         <h4>SOAS Environmental Justice Clinic Annual Report 2025/26</h4>
         <p class="meta"><span class="badge">Co-coordinator</span>SOAS Environmental Justice Clinic</p>
-        <p>The Clinic's year in review: one legal advice clinic and five policy clinic projects with partner organisations, on Rights of Nature, international climate change law, policy and ecological economics.</p>
-        <div class="links"><a href="reports/soas-environmental-justice-clinic-annual-report-2025-26.pdf" target="_blank" rel="noopener">Read report (PDF)</a></div>
+        <p>Records a year of one legal advice clinic and five policy projects, with partners including the Environmental Law Foundation, Lawyers for Nature, Legal Response International, Globalfields and Melinda Janki, on Rights of Nature, international climate change law, policy and ecological economics.</p>
+        <div class="links"><a href="reports/soas-environmental-justice-clinic-annual-report-2025-26.pdf" target="_blank" rel="noopener" aria-label="Read report: Clinic Annual Report 2025/26 (PDF)">Read report (PDF)</a></div>
       </article>
       <article class="card featured">
         <span class="when">2025/26</span>
         <h4>SOAS Environmental Justice Clinic: Advancing Innovative Legal Clinics for Ecological Justice</h4>
         <p class="meta"><span class="badge">Co-coordinator</span>Workshop report, prepared by Chlöe Jayne Prescott</p>
-        <p>Report of a May 2026 workshop with students, academics and partner organisations reflecting on the Clinic's work since 2022 and setting priorities for its development, ahead of a new credit-bearing clinical module in 2027/28.</p>
-        <div class="links"><a href="reports/advancing-innovative-legal-clinics-for-ecological-justice-2025-26.pdf" target="_blank" rel="noopener">Read report (PDF)</a></div>
+        <p>Reports a May 2026 workshop in which students, academics and partner organisations reviewed the Clinic since its 2022 launch, during which it has engaged more than 70 students and eight partner organisations. It sets four priorities: long-term partnerships, reflective learning, broader participation and deeper community engagement, ahead of a credit-bearing clinical module from 2027/28.</p>
+        <div class="links"><a href="reports/advancing-innovative-legal-clinics-for-ecological-justice-2025-26.pdf" target="_blank" rel="noopener" aria-label="Read report: Advancing Innovative Legal Clinics for Ecological Justice (PDF)">Read report (PDF)</a></div>
       </article>
     </div>
 
@@ -251,24 +357,35 @@ footer .container { padding-block: 26px 40px; font-size: 0.9rem; display: flex; 
         <span class="when">2025–26</span>
         <h4>A Charter for the River Thames</h4>
         <p class="meta"><span class="badge">Co-supervisor</span>LSE Sustainability Law and Policy Clinic, intercollegiate, with the Environmental Law Foundation</p>
-        <p>Three reports, April 2026, testing legal routes to a Thames Charter that treats the river as a stakeholder in decisions affecting it. The project was London's first intercollegiate environmental law clinic, with LSE, King's, UCL, SOAS and Birkbeck. Its strands looked at a joint borough arrangement under the Local Government Act 1972, at byelaw powers, and at bringing the Thames into decision-making procedures. I co-supervised the decision-making strand.</p>
+        <p>Three reports, April 2026, testing legal routes to a Thames Charter that treats the river as a stakeholder in decisions affecting it. The project was London's first intercollegiate environmental law clinic, with LSE, King's, UCL, SOAS and Birkbeck. Its strands looked at a joint borough arrangement under the Local Government Act 1972, at byelaw powers, and at bringing the Thames into decision-making procedures.</p>
+        <p>I co-supervised the decision-making strand with Dr Marie Petersmann. Its team compared three routes for giving the Thames a voice within the Greater London Authority: representation through the Mayoral team, an advisory role alongside the London Assembly Environment Committee, and integration into existing strategies such as the London Plan. They concluded that strategy-based integration is likely the most feasible first step.</p>
+        <p class="team">Strand team: Josie Butcher, Sarah Cooper, Julia Peetz, Hazal Pekdemir, Catalina Racovita and Kinjell Singh.</p>
         <div class="links"><a href="https://www.lse.ac.uk/global-school-of-sustainability/themes/mobilising-political-legal-governance-systems/clinic/intercollegiate/a-charter-for-the-river-thames" target="_blank" rel="noopener">Project and reports</a></div>
+      </article>
+      <article class="card">
+        <span class="when">2025/26</span>
+        <h4>Practitioners’ Guide: The Potential for Nature (Land) “Owning Itself” in the United Kingdom</h4>
+        <p class="meta"><span class="badge">Co-supervisor</span>SOAS Clinic with Lawyers for Nature</p>
+        <p>A practitioners’ guide on whether land could “own itself” in the UK. The team assessed comparative models and English land law and concluded that land cannot literally own itself, because it lacks legal personality, but that charitable trusts, conservation covenants and purpose-driven stewardship structures may approximate some of its aims.</p>
+        <p class="team">Team: Lina Zeitoun, Beatrice Stuart Fisher, Flavia Russo, Tom Crumbie and Jeffrey Cheung. Co-supervised with Miguel Camilo Cuba Pinto.</p>
+        <div class="links"><a href="reports/soas-environmental-justice-clinic-annual-report-2025-26.pdf" target="_blank" rel="noopener">Summary in the Annual Report (PDF)</a></div>
       </article>
       <article class="card">
         <span class="when">Oct 2024</span>
         <h4>Representing Rights of Nature: A Survey of Representative Forms</h4>
         <p class="meta"><span class="badge">Coordinator</span>SOAS Clinic with Lawyers for Nature</p>
         <p>Maps and analyses the models through which Nature is represented in law worldwide, for community organisers, lawyers, NGOs and policymakers. Published as more than 500 Rights of Nature initiatives had been recorded globally.</p>
-        <div class="links"><a href="https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf" target="_blank" rel="noopener">Report (PDF)</a><a href="https://soas.ac.uk/about/news/soas-environmental-law-clinic-partners-lawyers-nature-rights-nature-representative-model" target="_blank" rel="noopener">SOAS announcement</a></div>
+        <div class="links"><a href="https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf" target="_blank" rel="noopener">Read report (PDF)</a><a href="https://soas.ac.uk/about/news/soas-environmental-law-clinic-partners-lawyers-nature-rights-nature-representative-model" target="_blank" rel="noopener">SOAS announcement</a></div>
       </article>
       <article class="card">
         <span class="when">2024</span>
         <h4>Rights of Nature on the River Ouse</h4>
         <p class="meta">SOAS Clinic with the Environmental Law Foundation and Love Our Ouse</p>
         <p>Two reports across two years supporting a river charter intended for endorsement by Lewes District Council. Students reviewed national legislation and biodiversity records to map UK-protected species along the River Ouse in Sussex.</p>
+        <blockquote>“Their report on protected species is a valuable addition to ELF’s ongoing work.”<cite>Tom Brenan, Environmental Law Foundation, in the Clinic Annual Report 2025/26</cite></blockquote>
         <div class="links"><a href="https://www.soas.ac.uk/about/news/soas-students-champion-rights-nature-pro-bono-project-river-ouse" target="_blank" rel="noopener">Project and reports</a></div>
       </article>
-      <article class="card wide">
+      <article class="card">
         <span class="when">Clinic</span>
         <h4>Further Clinic research</h4>
         <p class="meta">Wildlife Trust · ClientEarth</p>
@@ -276,80 +393,167 @@ footer .container { padding-block: 26px 40px; font-size: 0.9rem; display: flex; 
         <div class="links"><a href="https://www.ledc.info/degree-programmes/clinic-environmental-law-policy-clinic" target="_blank" rel="noopener">All Clinic projects</a></div>
       </article>
     </div>
+  </section>
 
-    <div class="subhead"><h3>Committees, specialist groups and conferences</h3></div>
-    <div class="cards">
-      <article class="card">
+  <section id="activities" aria-labelledby="h-activities">
+    <div class="section-head"><span class="num">03</span><h2 id="h-activities">Professional activities</h2></div>
+    <ol class="rows quiet">
+      <li class="row">
+        <span class="when">Current</span>
+        <div>
+          <h3>UN Harmony with Nature Programme</h3>
+          <p class="type"><span class="badge">Expert Member</span>Earth-Centred Law</p>
+        </div>
+      </li>
+      <li class="row">
         <span class="when">Since 2024</span>
-        <h4>ILA Committee on Rights of Nature</h4>
-        <p class="meta"><span class="badge">Contributing researcher</span>International Law Association</p>
-        <p>An ILA committee developing common principles, guidelines and proposals on Rights of Nature, including its interfaces with sustainable development, Indigenous rights and human rights.</p>
-        <div class="links"><a href="https://www.ila-hq.org/en/documents/rights-of-nature-committee-proposal-21-7-24-1" target="_blank" rel="noopener">Committee proposal</a><a href="https://www.ila-hq.org/en/committees/rights-of-nature" target="_blank" rel="noopener">Committee page</a></div>
-      </article>
-      <article class="card">
+        <div>
+          <h3>ILA Committee on Rights of Nature</h3>
+          <p class="type"><span class="badge">Contributing researcher</span>International Law Association</p>
+          <p>An ILA committee developing common principles, guidelines and proposals on Rights of Nature, including its interfaces with sustainable development, Indigenous rights and human rights.</p>
+          <div class="links"><a href="https://www.ila-hq.org/en/documents/rights-of-nature-committee-proposal-21-7-24-1" target="_blank" rel="noopener">Committee proposal</a><a href="https://www.ila-hq.org/en/committees/rights-of-nature" target="_blank" rel="noopener">Committee page</a></div>
+        </div>
+      </li>
+      <li class="row">
         <span class="when">2025–29</span>
-        <h4>IUCN WCEL Rights of Nature Specialist Group</h4>
-        <p class="meta"><span class="badge">Contributing researcher</span>IUCN World Commission on Environmental Law</p>
-        <p>Legal expertise on constitutional, legislative and judicial approaches to Rights of Nature, with projects on operationalising Rights of Nature, rivers and wetlands, global commons, and Indigenous and customary practice.</p>
-        <div class="links"><a href="https://iucn.org/our-union/commissions/group/iucn-wcel-rights-nature-specialist-group" target="_blank" rel="noopener">Specialist Group</a><a href="https://portals.iucn.org/union/sites/union/files/doc/WCEL_Rights_of_Nature_SG_TOR_0.pdf" target="_blank" rel="noopener">Terms of Reference (PDF)</a></div>
-      </article>
-      <article class="card wide">
-        <span class="when">Jun 2026</span>
-        <h4>WATCON at the AIDA World Water Congress, Oslo</h4>
-        <p class="meta">WATCON project, SOAS · International Association for Water Law</p>
-        <p>WATCON's work on sectoral water conflicts, the human right to water and ecological integrity in South Asia, including the case for Rights of Nature, biocultural rights and community-led governance in water law.</p>
-        <div class="links"><a href="https://www.watcon.org/blogs/aida-world-water-congress-2026" target="_blank" rel="noopener">WATCON blog</a></div>
-      </article>
+        <div>
+          <h3>IUCN WCEL Rights of Nature Specialist Group</h3>
+          <p class="type"><span class="badge">Contributing researcher</span>IUCN World Commission on Environmental Law</p>
+          <p>Legal expertise on constitutional, legislative and judicial approaches to Rights of Nature, with projects on operationalising Rights of Nature, rivers and wetlands, global commons, and Indigenous and customary practice.</p>
+          <div class="links"><a href="https://iucn.org/our-union/commissions/group/iucn-wcel-rights-nature-specialist-group" target="_blank" rel="noopener">Specialist Group</a><a href="https://portals.iucn.org/union/sites/union/files/doc/WCEL_Rights_of_Nature_SG_TOR_0.pdf" target="_blank" rel="noopener">Terms of Reference (PDF)</a></div>
+        </div>
+      </li>
+      <li class="row">
+        <span class="when">2023–24</span>
+        <div>
+          <h3>UNDP, UNEP and IUCN Rights of Nature Information Note</h3>
+          <p class="type"><span class="badge">Research contribution</span>Research assistant</p>
+        </div>
+      </li>
+      <li class="row">
+        <span class="when">Current</span>
+        <div>
+          <h3>Law, Environment and Development (LEAD) Journal</h3>
+          <p class="type"><span class="badge">Assistant Editor</span>Coordinating peer review and the editorial process</p>
+          <div class="links"><a href="https://lead-journal.org/" target="_blank" rel="noopener">LEAD Journal</a></div>
+        </div>
+      </li>
+      <li class="row">
+        <span class="when">SOAS</span>
+        <div>
+          <h3>Harmony with Nature SOAS</h3>
+          <p class="type"><span class="badge">Founder</span>Events and seminar series</p>
+          <p>Brings together academics, NGOs and practitioners.</p>
+        </div>
+      </li>
+    </ol>
+    <div class="subhead"><h3>Conference contributions</h3></div>
+    <ol class="rows quiet">
+      <li class="row">
+        <time datetime="2026-06">Jun 2026</time>
+        <div>
+          <h3>WATCON at the AIDA World Water Congress, Oslo</h3>
+          <p class="type">WATCON project, SOAS · International Association for Water Law</p>
+          <p>WATCON's work on sectoral water conflicts, the human right to water and ecological integrity in South Asia, including the case for Rights of Nature, biocultural rights and community-led governance in water law.</p>
+          <div class="links"><a href="https://www.watcon.org/blogs/aida-world-water-congress-2026" target="_blank" rel="noopener">WATCON blog</a></div>
+        </div>
+      </li>
+    </ol>
+    <div class="memberships">
+      <h3>Memberships</h3>
+      <p>International Water Law Association (AIDA) · UK Rights of Nature Network · International Law Association · Global Network for Human Rights and the Environment</p>
+    </div>
+  </section>
+
+  <section id="teaching" aria-labelledby="h-teaching">
+    <div class="section-head"><span class="num">04</span><h2 id="h-teaching">Teaching</h2></div>
+    <div class="teach">
+      <div class="block">
+        <h3>Current subjects</h3>
+        <ul>
+          <li>Alternatives to Sustainable Development: Rights of Nature and Harmony with Nature (postgraduate)</li>
+          <li>International Environmental Law (postgraduate and undergraduate)</li>
+          <li>Environmental Law in Action (undergraduate)</li>
+          <li>Teaching across the LLM and MA in Environmental Law and Sustainable Development</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>Experiential learning</h3>
+        <ul>
+          <li>Co-coordinator of the SOAS Environmental Justice Clinic, supervising student teams on research for NGO and charity partners</li>
+          <li>Managing the teaching assistants and PhD researchers who work in the Clinic</li>
+          <li>Lead on Experiential Learning and Engagement, Law, Environment and Development Centre</li>
+        </ul>
+      </div>
+      <div class="block wide">
+        <h3>Previously</h3>
+        <ul>
+          <li>Graduate Teaching Fellow, SOAS (2021–2024): water law and development, international environmental law, climate change law and natural resources law</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section id="seminars" aria-labelledby="h-seminars">
-    <div class="section-head"><span class="num">03</span><h2 id="h-seminars">LEDC Seminar Series</h2>
-      <p class="section-intro">Public seminars hosted by the Law, Environment and Development Centre at SOAS, where I am Lead on Experiential Learning and Engagement: 19 events from February 2023 to October 2026, bringing practitioners, communities, barristers and academics to an open audience. I spoke at the February 2025 seminar on Harmony with Nature and river rights, marked “Speaker” in the 2024–25 archive.</p>
+    <div class="section-head"><span class="num">05</span><h2 id="h-seminars">LEDC Seminar Series</h2>
+      <p class="section-intro">Public seminars hosted by the Law, Environment and Development Centre at SOAS, bringing practitioners, communities, barristers and academics together with an open audience.</p>
     </div>
+    <div class="upcoming" id="upcoming-block">
+      <h3>Upcoming</h3>
+      <div id="upcoming-list">
+<article class="event-card" data-date="2026-10-27"><time datetime="2026-10-27">27 Oct 2026</time><div><span class="flag">Upcoming</span><h4>Legislating for Climate Adaptation, launch of policy brief</h4><p class="who">SOAS with LRI</p><p class="details">Tuesday 27 October 2026, 5:30pm · Room RB01, Paul Webley Wing, SOAS</p></div></article>
+      </div>
+    </div>
+    <h3 class="past-head">Past seminars</h3>
     <div class="seminars">
-<div class="year current"><h3>2026–27</h3><ol class="timeline">
-<li><time>27 Oct 2026</time><div><h4>Legislating for Climate Adaptation, launch of policy brief</h4><p class="who">SOAS with LRI</p></div></li>
-<li><time>8 Oct 2026</time><div><h4>From ESG to Corporate Accountability: Emerging Issues in Sustainability and Carbon Markets</h4><p class="who">Marta Simonetti (SOAS) · Yuhina Sangha (Dhirubhai Ambani University) · Professor Philippe Cullet (SOAS)</p></div></li>
-</ol></div>
+      <div class="year current"><h3>2026–27</h3><ol class="timeline" id="past-current">
+<li data-date="2026-10-08"><time datetime="2026-10-08">8 Oct 2026</time><div><h4>From ESG to Corporate Accountability: Emerging Issues in Sustainability and Carbon Markets</h4><p class="who">Marta Simonetti (SOAS) · Yuhina Sangha (Dhirubhai Ambani University) · Professor Philippe Cullet (SOAS)</p></div></li>
+      </ol></div>
 <details class="year"><summary><span class="yr">2025–26</span><span class="n">7 seminars</span></summary><ol class="timeline">
-<li><time>20 Apr 2026</time><div><h4>Customary Law Recognition and Indigenous Forest Tenure in Southeast Asia</h4><p class="who">Dr Mark West, Landesa</p></div></li>
-<li><time>16 Apr 2026</time><div><h4>Careers in Environmental Law, Policy and Advocacy</h4><p class="who">Illari Aragon (Christian Aid) · Zoe Wedderburn-Day (Fish Legal) · Luciano Asinelli (Impact Cubed), all SOAS alumni</p></div></li>
-<li><time>19 Mar 2026</time><div><h4>The Pacific's role in the ICJ proceedings on climate change</h4><p class="who">Harj Narulla, Doughty Street Chambers</p></div></li>
-<li><time>12 Mar 2026</time><div><h4>Ecocide and the Legality Exception</h4><p class="who">Dr Matthew Gillett, University of Essex</p></div></li>
-<li><time>30 Oct 2025</time><div><h4>Ecocide, Imperialism and Palestine Liberation</h4><p class="who">Dr Hamza Hamouchene, Transnational Institute</p></div></li>
-<li><time>23 Oct 2025</time><div><h4>Legal Pluralism, Rights of Nature and Inter-Judicial Exchange</h4><p class="who">Dr Iona McEntee, University of Strathclyde</p></div></li>
-<li><time>16 Oct 2025</time><div><h4>Reparations for the climate and biodiversity crises</h4><p class="who">Meghna Abraham, Future Economy Incubator</p></div></li>
+<li data-date="2026-04-20"><time datetime="2026-04-20">20 Apr 2026</time><div><h4>Customary Law Recognition and Indigenous Forest Tenure in Southeast Asia</h4><p class="who">Dr Mark West, Landesa</p></div></li>
+<li data-date="2026-04-16"><time datetime="2026-04-16">16 Apr 2026</time><div><h4>Careers in Environmental Law, Policy and Advocacy</h4><p class="who">Illari Aragon (Christian Aid) · Zoe Wedderburn-Day (Fish Legal) · Luciano Asinelli (Impact Cubed), all SOAS alumni</p></div></li>
+<li data-date="2026-03-19"><time datetime="2026-03-19">19 Mar 2026</time><div><h4>The Pacific's role in the ICJ proceedings on climate change</h4><p class="who">Harj Narulla, Doughty Street Chambers</p></div></li>
+<li data-date="2026-03-12"><time datetime="2026-03-12">12 Mar 2026</time><div><h4>Ecocide and the Legality Exception</h4><p class="who">Dr Matthew Gillett, University of Essex</p></div></li>
+<li data-date="2025-10-30"><time datetime="2025-10-30">30 Oct 2025</time><div><h4>Ecocide, Imperialism and Palestine Liberation</h4><p class="who">Dr Hamza Hamouchene, Transnational Institute</p></div></li>
+<li data-date="2025-10-23"><time datetime="2025-10-23">23 Oct 2025</time><div><h4>Legal Pluralism, Rights of Nature and Inter-Judicial Exchange</h4><p class="who">Dr Iona McEntee, University of Strathclyde</p></div></li>
+<li data-date="2025-10-16"><time datetime="2025-10-16">16 Oct 2025</time><div><h4>Reparations for the climate and biodiversity crises</h4><p class="who">Meghna Abraham, Future Economy Incubator</p></div></li>
 </ol></details>
 <details class="year"><summary><span class="yr">2024–25</span><span class="n">5 seminars</span></summary><ol class="timeline">
-<li><time>19 Mar 2025</time><div><h4>Impact of climate policies on human mobility and energy security in Bangladesh</h4><p class="who">KMS Tareq · Sharowat Shamin (SOAS) · Chair, Professor Martin Lau</p></div></li>
-<li><time>26 Feb 2025</time><div><h4>The Toxic Legacy of Oil in Nigeria: The Bille and Ogale Communities Against Shell</h4><p class="who">HRH Emere Godwin Bebe Okpabi, King of Ogale · the community's legal team at Leigh Day</p><p>Held the week the High Court in London heard the communities' claim against Shell over pollution in the Niger Delta.</p></div></li>
-<li class="spoke"><time>20 Feb 2025</time><div><h4>Harmony with Nature and River Rights in Bangladesh</h4><p class="who"><span class="badge">Speaker</span>Nate Palmer · Mohammad Sarwar (SOAS) · Chair, Professor Jérémie Gilbert</p></div></li>
-<li><time>23 Jan 2025</time><div><h4>Water Scarcity and Climate Justice in the GCC</h4><p class="who">Sara Al Mohanadi · Naser Al Sayed (SOAS) · Dr Esmat Zaidan (HBKU)</p></div></li>
-<li><time>28 Nov 2024</time><div><h4>Hinterland contestation: urbanising waters in Chennai</h4><p class="who">Dr Viswanathan Venkataraman (King's) · Dr Niranjana R (Queen Mary)</p></div></li>
+<li data-date="2025-03-19"><time datetime="2025-03-19">19 Mar 2025</time><div><h4>Impact of climate policies on human mobility and energy security in Bangladesh</h4><p class="who">KMS Tareq · Sharowat Shamin (SOAS) · Chair, Professor Martin Lau</p></div></li>
+<li data-date="2025-02-26"><time datetime="2025-02-26">26 Feb 2025</time><div><h4>The Toxic Legacy of Oil in Nigeria: The Bille and Ogale Communities Against Shell</h4><p class="who">HRH Emere Godwin Bebe Okpabi, King of Ogale · the community's legal team at Leigh Day</p><p>Held the week the High Court in London heard the communities' claim against Shell over pollution in the Niger Delta.</p></div></li>
+<li class="spoke" data-date="2025-02-20"><time datetime="2025-02-20">20 Feb 2025</time><div><h4>Harmony with Nature and River Rights in Bangladesh</h4><p class="who"><span class="badge">Speaker</span>Nate Palmer · Mohammad Sarwar (SOAS) · Chair, Professor Jérémie Gilbert</p></div></li>
+<li data-date="2025-01-23"><time datetime="2025-01-23">23 Jan 2025</time><div><h4>Water Scarcity and Climate Justice in the GCC</h4><p class="who">Sara Al Mohanadi · Naser Al Sayed (SOAS) · Dr Esmat Zaidan (HBKU)</p></div></li>
+<li data-date="2024-11-28"><time datetime="2024-11-28">28 Nov 2024</time><div><h4>Hinterland contestation: urbanising waters in Chennai</h4><p class="who">Dr Viswanathan Venkataraman (King's) · Dr Niranjana R (Queen Mary)</p></div></li>
 </ol></details>
 <details class="year"><summary><span class="yr">2023–24</span><span class="n">3 seminars</span></summary><ol class="timeline">
-<li><time>16 Nov 2023</time><div><h4>Rights, Human Rights and Rivers</h4><p class="who">Dr Rebecca Bates, Queen Mary University of London</p></div></li>
-<li><time>2 Nov 2023</time><div><h4>The Biodiversity Convention and Institutional Development</h4><p class="who">Dr Andreas Kotsakis, Kent Law School</p></div></li>
-<li><time>12 Oct 2023</time><div><h4>BBNJ Treaty (Treaty of the High Seas) panel</h4><p class="who">Professor Irini Papanicolopulu · Dr Megan Wong · Dr Efthymios Papastavridis</p></div></li>
+<li data-date="2023-11-16"><time datetime="2023-11-16">16 Nov 2023</time><div><h4>Rights, Human Rights and Rivers</h4><p class="who">Dr Rebecca Bates, Queen Mary University of London</p></div></li>
+<li data-date="2023-11-02"><time datetime="2023-11-02">2 Nov 2023</time><div><h4>The Biodiversity Convention and Institutional Development</h4><p class="who">Dr Andreas Kotsakis, Kent Law School</p></div></li>
+<li data-date="2023-10-12"><time datetime="2023-10-12">12 Oct 2023</time><div><h4>BBNJ Treaty (Treaty of the High Seas) panel</h4><p class="who">Professor Irini Papanicolopulu · Dr Megan Wong · Dr Efthymios Papastavridis</p></div></li>
 </ol></details>
 <details class="year"><summary><span class="yr">2022–23</span><span class="n">2 seminars</span></summary><ol class="timeline">
-<li><time>22 Jun 2023</time><div><h4>What Does Post Growth Mean for Law, Human Rights and Development?</h4><p class="who">Dr Margot Salomon (LSE) · Ashish Kothari (Kalpavriksh) · Professor Sam Adelman (Warwick)</p></div></li>
-<li><time>9 Feb 2023</time><div><h4>Rights of Nature and Beyond</h4><p class="who">Shrishtee Bajpai, Kalpavriksh and Global Alliance for the Rights of Nature</p></div></li>
+<li data-date="2023-06-22"><time datetime="2023-06-22">22 Jun 2023</time><div><h4>What Does Post Growth Mean for Law, Human Rights and Development?</h4><p class="who">Dr Margot Salomon (LSE) · Ashish Kothari (Kalpavriksh) · Professor Sam Adelman (Warwick)</p></div></li>
+<li data-date="2023-02-09"><time datetime="2023-02-09">9 Feb 2023</time><div><h4>Rights of Nature and Beyond</h4><p class="who">Shrishtee Bajpai, Kalpavriksh and Global Alliance for the Rights of Nature</p></div></li>
 </ol></details>
     </div>
   </section>
 
-  <section id="communications" aria-labelledby="h-comms">
-    <div class="section-head"><span class="num">04</span><h2 id="h-comms">Academic communications</h2></div>
-    <ol class="rows">
+  <section id="service" aria-labelledby="h-service">
+    <div class="section-head"><span class="num">06</span><h2 id="h-service">Centre leadership and communications</h2></div>
+    <ol class="rows quiet">
       <li class="row">
-        <time>2026</time>
+        <span class="when">Current</span>
+        <div>
+          <h3>Law, Environment and Development Centre, SOAS</h3>
+          <p class="type"><span class="badge">Lead</span>Experiential Learning and Engagement</p>
+        </div>
+      </li>
+      <li class="row">
+        <time datetime="2026">2026</time>
         <div>
           <h3>Law, Environment and Development Centre website</h3>
           <p class="type"><span class="badge">Lead</span>New site, under construction</p>
           <p>A rebuilt site for the Centre, its degree programmes, seminar series, research and the Clinic's project portfolio.</p>
-          <div class="links"><a href="https://www.ledc.info/degree-programmes/clinic-environmental-law-policy-clinic" target="_blank" rel="noopener">ledc.info</a></div>
+          <div class="links"><a href="https://www.ledc.info/home" target="_blank" rel="noopener">ledc.info</a></div>
         </div>
       </li>
       <li class="row">
@@ -363,10 +567,59 @@ footer .container { padding-block: 26px 40px; font-size: 0.9rem; display: flex; 
       </li>
     </ol>
   </section>
+
+  <section id="contact" aria-labelledby="h-contact">
+    <div class="section-head"><span class="num">07</span><h2 id="h-contact">Contact</h2></div>
+    <div class="contact-block">
+      <div><span class="label">Email</span><a class="email" href="mailto:np51@soas.ac.uk">np51@soas.ac.uk</a></div>
+      <div class="links"><a href="https://www.soas.ac.uk/about/nate-palmer" target="_blank" rel="noopener">SOAS staff profile</a><a href="https://www.linkedin.com/in/palmernate/" target="_blank" rel="noopener">LinkedIn</a><a href="https://soas-repository.worktribe.com/person/300754/nate-palmer" target="_blank" rel="noopener">SOAS Research Online</a></div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="container"><span>Dr Nate Palmer · SOAS University of London</span><span>Clinic projects are the work of student teams supervised by SOAS staff. Roles shown are my own.</span></div>
 </footer>
+
+<script>
+/* Move seminars whose date has passed out of "Upcoming"; highlight the section in view. */
+(function () {
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var list = document.getElementById('upcoming-list');
+  var block = document.getElementById('upcoming-block');
+  var past = document.getElementById('past-current');
+  if (list && past) {
+    Array.prototype.slice.call(list.querySelectorAll('.event-card')).forEach(function (card) {
+      var d = new Date(card.getAttribute('data-date') + 'T00:00:00');
+      if (d < today) {
+        var li = document.createElement('li');
+        li.setAttribute('data-date', card.getAttribute('data-date'));
+        var t = card.querySelector('time').cloneNode(true);
+        var div = document.createElement('div');
+        var h = document.createElement('h4'); h.textContent = card.querySelector('h4').textContent;
+        var who = card.querySelector('.who').cloneNode(true);
+        div.appendChild(h); div.appendChild(who);
+        li.appendChild(t); li.appendChild(div);
+        past.insertBefore(li, past.firstChild);
+        card.remove();
+      }
+    });
+    if (!list.querySelector('.event-card')) block.hidden = true;
+  }
+  if ('IntersectionObserver' in window) {
+    var links = {};
+    Array.prototype.slice.call(document.querySelectorAll('.sitenav a.navlink')).forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && links[en.target.id]) {
+          Object.keys(links).forEach(function (k) { links[k].removeAttribute('aria-current'); });
+          links[en.target.id].setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) obs.observe(s); });
+  }
+})();
+</script>
 </body>
 </html>
